@@ -1,0 +1,21 @@
+﻿program SFML_Demos;
+
+{$mode objfpc}{$H+}
+
+uses
+  {$IFDEF UNIX}
+  cthreads,
+  {$ENDIF}
+  Classes,
+  SysUtils,
+  SFML_Demos.Main,
+  SFML_Demos.HelloWorld, SFML_Demos.Basic, SFML_Demos.Caleidos;
+
+begin
+  try
+    Run;
+  except
+    on E: Exception do
+      WriteLn(E.ClassName, ': ', E.Message);
+  end;
+end.
