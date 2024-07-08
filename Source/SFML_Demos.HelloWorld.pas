@@ -39,8 +39,8 @@ var
 begin
   {$ifdef LINUX}
   SetExceptionMask([exInvalidOp, exDenormalized, exZeroDivide, exOverflow, exUnderflow, exPrecision]);
-
   {$endif}
+
   Mode.Width := 800;
   Mode.Height := 600;
   Mode.BitsPerPixel := 32;

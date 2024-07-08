@@ -1,22 +1,28 @@
 ﻿unit SFML_Demos.Main;
 
 {$mode ObjFPC}{$H+}
+{$ModeSwitch unicodestrings}{$J-}
 
 interface
 
 uses
   Classes,
-  SysUtils;
+  SysUtils, ctGL;
 
 procedure Run;
 
 implementation
 
 uses
-  SFML_Demos.Caleidos;
+  SFML_Demos.Colorful;
 
 procedure Test;
+var
+  bool: Boolean;
 begin
+  bool := false;
+  bool := OpenGLLib_InitOK;
+  OpenGL_InitializeAdvance;
   Exit;
 end;
 

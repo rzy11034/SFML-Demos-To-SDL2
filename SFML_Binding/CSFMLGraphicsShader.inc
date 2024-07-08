@@ -393,7 +393,7 @@ procedure sfShader_setMat4UniformArray(shader: PsfShader; const name: pchar; con
   \param name   Name of the parameter in the shader
   \param x      Value to assign
 *)
-procedure sfShader_setFloatParameter(shader: PsfShader; const name: pchar; x: cfloat); cdecl; external LIB_CSFMLGRAPHICS; deprecated;
+procedure sfShader_setFloatParameter(shader: PsfShader; const name: pchar; x: cfloat); cdecl; external LIB_CSFMLGRAPHICS;
 
 (*
   \brief Change a 2-components vector parameter of a shader
@@ -415,7 +415,7 @@ procedure sfShader_setFloatParameter(shader: PsfShader; const name: pchar; x: cf
   \param x      First component of the value to assign
   \param y      Second component of the value to assign
 *)
-procedure sfShader_setFloat2Parameter(shader: PsfShader; const name: pchar; x: cfloat; y: cfloat); cdecl; external LIB_CSFMLGRAPHICS; deprecated;
+procedure sfShader_setFloat2Parameter(shader: PsfShader; const name: pchar; x: cfloat; y: cfloat); cdecl; external LIB_CSFMLGRAPHICS;
 
 (*
   \brief Change a 3-components vector parameter of a shader
@@ -533,7 +533,7 @@ procedure sfShader_setVector3Parameter(shader: PsfShader; const name: pchar; vec
   \param name   Name of the parameter in the shader
   \param color  Color to assign
 *)
-procedure sfShader_setColorParameter(shader: PsfShader; const name: pchar; color: sfColor); cdecl; external LIB_CSFMLGRAPHICS; deprecated;
+procedure sfShader_setColorParameter(shader: PsfShader; const name: pchar; color: sfColor); cdecl; external LIB_CSFMLGRAPHICS;
 
 (*
   \brief Change a matrix parameter of a shader

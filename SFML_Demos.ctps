@@ -11,9 +11,8 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="4"/>
-        <CursorPos X="111" Y="7"/>
-        <UsageCount Value="51"/>
+        <CursorPos X="10" Y="12"/>
+        <UsageCount Value="59"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -21,19 +20,113 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="7"/>
-        <CursorPos X="22" Y="16"/>
-        <UsageCount Value="51"/>
+        <CursorPos X="22" Y="17"/>
+        <UsageCount Value="59"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.HelloWorld.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="22"/>
+        <CursorPos X="24" Y="41"/>
+        <UsageCount Value="59"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SFML_Binding\CSFMLAudio.pas"/>
+        <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="4"/>
-        <CursorPos X="36" Y="6"/>
-        <UsageCount Value="51"/>
+        <TopLine Value="25"/>
+        <CursorPos X="32" Y="38"/>
+        <UsageCount Value="29"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SFML_Binding\CSFMLConfig.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="29"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SFML_Binding\CSFMLGraphics.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="120"/>
+        <CursorPos X="11" Y="120"/>
+        <UsageCount Value="29"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SFML_Binding\CSFMLNetwork.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="29"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SFML_Binding\CSFMLSystem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="29"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SFML_Binding\CSFMLWindow.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="43"/>
+        <UsageCount Value="29"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\SFML_Demos.Basic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="10"/>
+        <CursorPos X="17" Y="88"/>
+        <UsageCount Value="29"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="129"/>
+        <CursorPos X="43" Y="132"/>
+        <UsageCount Value="29"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\SFML_Demos.Circle.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="26"/>
+        <CursorPos X="69" Y="46"/>
+        <UsageCount Value="28"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\SFML_Demos.Circles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="99"/>
+        <CursorPos X="36" Y="103"/>
+        <UsageCount Value="28"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\SFML_Demos.Colorful.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="97"/>
+        <CursorPos X="40" Y="141"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\DeepStar-Lib\SFML_Binding\Source\CSFMLAudio.pas"/>
@@ -107,51 +200,6 @@
         <UsageCount Value="10"/>
       </Unit>
       <Unit>
-        <Filename Value="SFML_Binding\CSFMLAudio.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="0"/>
-        <UsageCount Value="21"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLConfig.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="0"/>
-        <UsageCount Value="21"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLGraphics.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="65"/>
-        <CursorPos X="10" Y="82"/>
-        <UsageCount Value="21"/>
-        <Loaded Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLNetwork.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="0"/>
-        <UsageCount Value="21"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLSystem.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="0"/>
-        <UsageCount Value="21"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLWindow.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="0"/>
-        <UsageCount Value="21"/>
-      </Unit>
-      <Unit>
         <Filename Value="SFML_Binding\CSFMLGraphicsText.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
@@ -165,18 +213,9 @@
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="58"/>
-        <CursorPos X="3" Y="75"/>
+        <TopLine Value="35"/>
+        <CursorPos X="3" Y="51"/>
         <UsageCount Value="10"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\SFML_Demos.Basic.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="10"/>
-        <CursorPos X="17" Y="88"/>
-        <UsageCount Value="21"/>
       </Unit>
       <Unit>
         <Filename Value="..\Temp\Package\Source\Utils\DeepStar.UnicodeStringHelper.inc"/>
@@ -195,35 +234,23 @@
         <UsageCount Value="10"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="124"/>
-        <CursorPos X="65" Y="145"/>
-        <UsageCount Value="21"/>
-        <Loaded Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="SFML_Binding\CSFMLGraphicsShader.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="392"/>
-        <CursorPos X="48" Y="409"/>
+        <TopLine Value="520"/>
+        <CursorPos X="128" Y="536"/>
         <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
         <FRMtype Value="0"/>
         <UnitName Value="ctGLES2"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="10808"/>
-        <CursorPos X="10" Y="10810"/>
+        <CursorPos X="37" Y="10827"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles3.pas"/>
@@ -249,91 +276,250 @@
         <TopLine Value="454"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="SFML_Binding\CSFMLWindowTypes.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="34"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\fpcsrc\packages\rtl-objpas\src\inc\system.math.vectors.pp"/>
+        <FRMtype Value="0"/>
+        <UnitName Value="System.Math.Vectors"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="224"/>
+        <CursorPos X="3" Y="241"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\fpcsrc\rtl\x86_64\mathu.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="231"/>
+        <CursorPos X="3" Y="242"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\fpcsrc\rtl\objpas\math.pp"/>
+        <FRMtype Value="0"/>
+        <UnitName Value="Math"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="237"/>
+        <CursorPos X="3" Y="242"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\fpcsrc\packages\opengles\src\gles20.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1867"/>
+        <CursorPos X="53" Y="1888"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles1.pas"/>
+        <FRMtype Value="0"/>
+        <UnitName Value="ctGLES1"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="11193"/>
+        <CursorPos X="29" Y="11203"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles1.pas"/>
+        <FRMtype Value="0"/>
+        <UnitName Value="ctGLES1"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="11238"/>
+        <CursorPos X="3" Y="11240"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SFML_Binding\CSFMLGraphicsRenderWindow.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="413"/>
+        <CursorPos X="11" Y="429"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SFML_Binding\CSFMLGraphicsRenderStates.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="31"/>
+        <CursorPos X="3" Y="47"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\typhon\components\packages_pl\pl_OpenGL\source\ctgl.pas"/>
+        <FRMtype Value="0"/>
+        <UnitName Value="ctGL"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="22155"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles3.pas"/>
+        <FRMtype Value="0"/>
+        <UnitName Value="ctGLES3"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="254"/>
+        <CursorPos X="3" Y="270"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\typhon\components\packages_pl\pl_OpenGL\source\OpenGL_FreeType.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="337"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\typhon\components\packages_pl\pl_OpenGL\source\OpenGL_Shaders.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="97"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\typhon\components\packages_pl\pl_OpenGL\source\OpenGL_Textures.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="322"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\typhon\components\packages_pl\pl_OpenGL\source\OpenGLPanel_carbon.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="34"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\typhon\components\packages_pl\pl_OpenGL\source\OpenGLPanel_win.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="28"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\usr\local\codetyphon\typhon\components\packages_pl\pl_OpenGL\source\OpenGLPanel.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="110"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\packages\opengles\src\gles20.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <CursorPos Y="1888"/>
+        <UsageCount Value="11"/>
+      </Unit>
     </Units>
     <JumpHistory HistoryIndex="20">
       <Position>
-        <Filename Value="SFML_Demos.ppr"/>
-        <Caret Line="13" Column="38"/>
-      </Position>
-      <Position>
-        <Filename Value="SFML_Demos.ppr"/>
-        <Caret Line="15"/>
-      </Position>
-      <Position>
-        <Filename Value="SFML_Demos.ppr"/>
-        <Caret Line="17"/>
-      </Position>
-      <Position>
-        <Filename Value="SFML_Demos.ppr"/>
-        <Caret Line="25" Column="24"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="23" Column="37"/>
       </Position>
       <Position>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
-        <Caret Line="3" Column="26"/>
+        <Caret Line="24" Column="44"/>
       </Position>
       <Position>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
-        <Caret Line="16" Column="19"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
-        <Caret Line="159" Column="40" TopLine="138"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
-        <Caret Line="117" Column="58" TopLine="99"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
-        <Caret Line="115" Column="69" TopLine="106"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
-        <Caret Line="131" Column="3" TopLine="114"/>
+        <Caret Line="23" TopLine="13"/>
       </Position>
       <Position>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
-        <Caret Line="16" Column="22" TopLine="7"/>
+        <Caret Line="21" Column="16" TopLine="13"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="48" Column="19" TopLine="42"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="23" Column="17" TopLine="13"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="10821" Column="10" TopLine="10804"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="24" TopLine="13"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="14553" Column="10" TopLine="14539"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="10" Column="17"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="14588" Column="10" TopLine="14571"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="21" Column="20"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="14553" Column="10" TopLine="14536"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="23" TopLine="14"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="14602" Column="11" TopLine="14585"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="24" TopLine="14"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="14553" Column="10" TopLine="14536"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="25" Column="22"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="14623" Column="3" TopLine="14615"/>
+        <Filename Value="SFML_Demos.ppr"/>
+        <Caret Line="12" Column="10"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="14662" Column="11" TopLine="14645"/>
+        <Filename Value="Source\SFML_Demos.Colorful.pas"/>
+        <Caret Line="48" Column="119" TopLine="90"/>
       </Position>
       <Position>
-        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_OpenGLES\source\ctgles2.pas"/>
-        <Caret Line="14621" Column="11" TopLine="14604"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="25" Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Colorful.pas"/>
+        <Caret Line="101" Column="65" TopLine="110"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="21" Column="3"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="18" Column="19"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Colorful.pas"/>
+        <Caret Line="3" Column="20" TopLine="96"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="17" Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Colorful.pas"/>
+        <Caret Line="134" TopLine="110"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Colorful.pas"/>
+        <Caret Line="130" Column="47" TopLine="133"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -341,4 +527,11 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <Watches>
+      <Item ClassAutoCast="True">
+        <Expression Value="FragmentShader"/>
+      </Item>
+    </Watches>
+  </Debugging>
 </CONFIG>

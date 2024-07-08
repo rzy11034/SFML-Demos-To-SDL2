@@ -16,11 +16,8 @@ uses
   {$ifdef LINUX}
   Math,
   {$endif}
-  ctypes,
   CSFMLConfig,
-  CSFMLAudio,
   CSFMLGraphics,
-  CSFMLNetwork,
   CSFMLSystem,
   CSFMLWindow;
 
