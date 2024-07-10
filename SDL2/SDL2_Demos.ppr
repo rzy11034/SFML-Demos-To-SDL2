@@ -1,0 +1,35 @@
+﻿program SDL2_Demos;
+
+{$mode objfpc}{$H+}
+{$ModeSwitch unicodestrings}{$J-}
+
+uses
+  {$IFDEF UNIX}
+  cthreads,
+  {$ENDIF}
+  Classes,
+  SysUtils,
+  DeepStar.Utils,
+  SDL2_Loader,
+  SDL2_Demos.Main,
+  SDL2_Demos.Basic;
+
+var
+  gLoaderSDL2: TLoaderSDL2;
+
+begin
+  gLoaderSDL2 := TLoaderSDL2.Create(nil);
+
+  try
+    gLoaderSDL2.Active := true;
+
+    try
+      Run;
+    except
+      on E: Exception do
+        WriteLn(E.ClassName, ': ', E.Message);
+    end;
+  finally
+    gLoaderSDL2.Free;
+  end;
+end.

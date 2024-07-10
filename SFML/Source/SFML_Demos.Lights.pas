@@ -1,4 +1,4 @@
-﻿unit SFML_Demos.Colorful;
+﻿unit SFML_Demos.Lights;
 
 {$mode ObjFPC}{$H+}
 
@@ -6,8 +6,7 @@ interface
 
 uses
   Classes,
-  SysUtils,
-  DeepStar.Utils;
+  SysUtils;
 
 procedure Main;
 
@@ -24,7 +23,7 @@ uses
 
 procedure Main;
 var
-  FragmentShader: PAnsiChar;
+  FragmentShader: PChar;
   RenderTargetHandle: PsfRenderTexture;
   TextureHandle: PsfTexture;
   Mode: sfVideoMode;
@@ -35,67 +34,47 @@ var
   ShaderHandle: PsfShader;
   SpriteHandle: PsfSprite;
   Clock: PsfClock;
+  MousePos: sfVector2i;
 begin
   {$ifdef LINUX}
   SetExceptionMask([exInvalidOp, exDenormalized, exZeroDivide, exOverflow, exUnderflow, exPrecision]);
-
   {$endif}
+
   States.BlendMode := sfBlendAlpha;
   States.Transform := sfTransform_identity;
 
   FragmentShader :=
-    '// Colorful Voronoi'#10 +
-    '// By: Brandon Fogerty'#10 +
-    '// bfogerty at gmail dot com'#10 +
-    '// xdpixel.com'#10 +
-    ''#10 +
     '#ifdef GL_ES'#10 +
     'precision mediump float;'#10 +
     '#endif'#10 +
     ''#10 +
     'uniform float time;'#10 +
+    'uniform vec2 mouse;'#10 +
     'uniform vec2 resolution;'#10 +
     ''#10 +
-    'vec2 hash(vec2 p)'#10 +
-    '{'#10 +
-    '    mat2 m = mat2(  13.85, 47.77,'#10 +
-    '                    99.41, 88.48'#10 +
-    '                );'#10 +
+    'vec2 position;'#10 +
     ''#10 +
-    '    return fract(tan(m*p*p*p*p*p*p) * 46727.29);'#10 +
+    'vec3 ball(vec3 colour, float sizec, float xc, float yc){'#10 +
+    '	return colour * (sizec / distance(position, vec2(xc, yc)));'#10 +
     '}'#10 +
     ''#10 +
-    'float voronoi(vec2 p)'#10 +
-    '{'#10 +
-    '    vec2 g = floor(p);'#10 +
-    '    vec2 f = fract(p);'#10 +
+    'vec3 red = vec3(2, 1, 1);'#10 +
+    'vec3 green = vec3(1, 2, 1);'#10 +
+    'vec3 blue = vec3(2, 2, 3);'#10 +
+    'void main( void ) {'#10 +
     ''#10 +
-    '    float distanceToClosestFeaturePoint = 1.0;'#10 +
-    '    for(int y = -1; y <= 1; y++)'#10 +
-    '    {'#10 +
-    '        for(int x = -1; x <= 1; x++)'#10 +
-    '        {'#10 +
-    '            vec2 latticePoint = vec2(x, y);'#10 +
-    '            float currentDistance = distance(latticePoint + hash(g+latticePoint), f);'#10 +
-    '            distanceToClosestFeaturePoint = min(distanceToClosestFeaturePoint, currentDistance);'#10 +
-    '        }'#10 +
-    '    }'#10 +
+    '	position = ( gl_FragCoord.xy / resolution.xy );'#10 +
+    '	position.y = position.y * resolution.y/resolution.x + 0.25;'#10 +
+    '	vec2 mousepos = mouse;'#10 +
+    '	mousepos.y = mouse.y * resolution.y/resolution.x + 0.25;'#10 +
     ''#10 +
-    '    return distanceToClosestFeaturePoint;'#10 +
-    '}'#10 +
+    '	vec3 color = vec3(0.0);'#10 +
+    '	float ratio = resolution.x / resolution.y;'#10 +
+    '	color += ball(red, 0.01, sin(time*4.0) / 12.0 + 0.5, cos(time*4.0) / 6.0 + 0.5);'#10 +
+    '	color += ball(green, 0.01, sin(time*4.0) / 6.0 + 0.5, cos(time*4.0) / 12.0 + 0.5);'#10 +
+    '	color += ball(blue, 0.01, mousepos.x, mousepos.y);'#10 +
+    '	gl_FragColor = vec4(color, 1.0 );'#10 +
     ''#10 +
-    'void main( void )'#10 +
-    '{'#10 +
-    '    vec2 uv = ( gl_FragCoord.xy / resolution.xy ) * 2.0 - 1.0;'#10 +
-    '    uv.x *= resolution.x / resolution.y;'#10 +
-    ''#10 +
-    '    float offset = voronoi(uv*10.0 + vec2(time));'#10 +
-    '    float t = 1.0/abs(((uv.x + sin(uv.y + time)) + offset) * 30.0);'#10 +
-    ''#10 +
-    '    float r = voronoi( uv * 1.0 ) * 10.0;'#10 +
-    '    vec3 finalColor = vec3(10.0 * uv.y, 2.0, 1.0 * r) * t;'#10 +
-    ''#10 +
-    '    gl_FragColor = vec4(finalColor, 1.0 );'#10 +
     '}';
   ShaderHandle := sfShader_createFromMemory(nil, nil, FragmentShader);
   States.Shader := ShaderHandle;
@@ -111,7 +90,7 @@ begin
   Mode.Height := 600;
   Mode.BitsPerPixel := 32;
   Title := 'SFML Shader - ' + lowerCase({$I %FPCTARGETCPU%}) + '-' + lowerCase({$I %FPCTARGETOS%});
-  WindowHandle := sfRenderWindow_create(Mode, PAnsiChar(Title), sfUint32(sfTitleBar) or sfUint32(sfClose), nil);
+  WindowHandle := sfRenderWindow_create(Mode, PChar(Title), sfUint32(sfTitleBar) or sfUint32(sfClose), nil);
 
   sfShader_setFloat2Parameter(ShaderHandle, 'resolution', Mode.Width, Mode.Height);
 
@@ -127,6 +106,9 @@ begin
       if Event.type_ = sfEvtClosed then
         sfRenderWindow_close(WindowHandle);
     end;
+
+    MousePos := sfMouse_getPositionRenderWindow(WindowHandle);
+    sfShader_setFloat2Parameter(ShaderHandle, 'mouse', MousePos.x / Mode.Width, 1 - MousePos.y / Mode.Height);
 
     sfShader_setFloatParameter(ShaderHandle, 'time', sfTime_asSeconds(sfClock_getElapsedTime(Clock)));
 

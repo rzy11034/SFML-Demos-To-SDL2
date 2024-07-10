@@ -10,7 +10,7 @@
         <MainUnitHasScaledStatement Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
-      <Title Value="SFML_Demos"/>
+      <Title Value="SDL2_Demos"/>
       <UseAppBundle Value="False"/>
       <ResourceType Value="res"/>
     </General>
@@ -21,15 +21,18 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="bin\SFML_Demos"/>
+            <Filename Value="bin/SDL2_Demos"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;SFML_Binding"/>
+            <OtherUnitFiles Value="Source;Source\Basic;Source\Utils"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="4"/>
+            </Optimizations>
           </CodeGeneration>
           <Linking>
             <Debugging>
@@ -50,71 +53,27 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="DeepStar_Lib"/>
+      </Item>
+      <Item>
         <PackageName Value="pl_OpenGL"/>
       </Item>
       <Item>
-        <PackageName Value="pl_opengles"/>
-      </Item>
-      <Item>
-        <PackageName Value="DeepStar_Lib"/>
+        <PackageName Value="pl_SDL"/>
       </Item>
     </RequiredPackages>
     <Units>
       <Unit>
-        <Filename Value="SFML_Demos.ppr"/>
+        <Filename Value="SDL2_Demos.ppr"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\SFML_Demos.HelloWorld.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLAudio.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLConfig.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLGraphics.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLNetwork.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLSystem.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="SFML_Binding\CSFMLWindow.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\SFML_Demos.Basic.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\SFML_Demos.Circle.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\SFML_Demos.Circles.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\SFML_Demos.Colorful.pas"/>
+        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
@@ -123,11 +82,11 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="bin\SFML_Demos"/>
+      <Filename Value="bin/SDL2_Demos"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Source;SFML_Binding"/>
+      <OtherUnitFiles Value="Source;Source\Basic;Source\Utils"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>

@@ -1,4 +1,4 @@
-﻿unit SFML_Demos.Main;
+﻿unit SDL2_Demos.Main;
 
 {$mode ObjFPC}{$H+}
 {$ModeSwitch unicodestrings}{$J-}
@@ -7,22 +7,17 @@ interface
 
 uses
   Classes,
-  SysUtils, ctGL;
+  SysUtils,
+  DeepStar.Utils;
 
 procedure Run;
 
 implementation
 
-uses
-  SFML_Demos.Colorful;
+uses SDL2_Demos.Basic;
 
 procedure Test;
-var
-  bool: Boolean;
 begin
-  bool := false;
-  bool := OpenGLLib_InitOK;
-  OpenGL_InitializeAdvance;
   Exit;
 end;
 
