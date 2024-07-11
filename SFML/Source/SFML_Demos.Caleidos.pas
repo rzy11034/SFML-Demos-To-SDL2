@@ -6,7 +6,8 @@ interface
 
 uses
   Classes,
-  SysUtils;
+  SysUtils,
+  GL;
 
 procedure Main;
 
@@ -38,8 +39,8 @@ var
 begin
   {$ifdef LINUX}
   SetExceptionMask([exInvalidOp, exDenormalized, exZeroDivide, exOverflow, exUnderflow, exPrecision]);
-
   {$endif}
+
   States.BlendMode := sfBlendAlpha;
   States.Transform := sfTransform_identity;
 
@@ -108,6 +109,7 @@ begin
     '	float v = 32.0 * af * (1.0 - af) * df * (1.0 - df) * exp(-rp.y * 0.8);'#10 +
     '	gl_FragColor = vec4(hsv(noise(vec2(ai, di) * 0.01), 1.0, v), 1.0);'#10 +
     '}';
+
   ShaderHandle := sfShader_createFromMemory(nil, nil, FragmentShader);
   States.Shader := ShaderHandle;
 

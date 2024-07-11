@@ -12,7 +12,8 @@ uses
   DeepStar.Utils,
   SDL2_Loader,
   SDL2_Demos.Main,
-  SDL2_Demos.Basic;
+  SDL2_Demos.Basic,
+  SDL2_Demos.Caleidos;
 
 var
   gLoaderSDL2: TLoaderSDL2;

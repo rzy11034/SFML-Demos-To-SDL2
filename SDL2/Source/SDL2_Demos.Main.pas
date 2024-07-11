@@ -14,7 +14,7 @@ procedure Run;
 
 implementation
 
-uses SDL2_Demos.Basic;
+uses SDL2_Demos.Caleidos;
 
 procedure Test;
 begin

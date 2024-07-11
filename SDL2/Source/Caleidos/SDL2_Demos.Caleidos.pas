@@ -1,4 +1,4 @@
-﻿unit SDL2_Demos.Basic;
+﻿unit SDL2_Demos.Caleidos;
 
 {$mode ObjFPC}{$H+}
 {$ModeSwitch unicodestrings}{$J-}
@@ -9,33 +9,33 @@ uses
   Classes,
   SysUtils,
   libSDL2,
+  DeepStar.Utils,
   DeepStar.SDL2_ADV.Windows,
   DeepStar.SDL2_ADV.Texture,
   DeepStar.SDL2_ADV.Utils;
 
 var
-  title: string;
+  FragmentShader, title: string;
   window: TWindow;
-  txText: TTexture;
   event: TSDL_Event;
-  quit: boolean;
+  quit: Boolean;
 
 procedure Main;
+function Read_GLSL(fileName: string): string;
 
 implementation
 
 procedure Main;
 begin
-  title := 'SDL2 Basic Window - ' + lowerCase({$I %FPCTargetCPU%}) + '-' + lowerCase({$I %FPCTargetOS%});
+  FragmentShader. := Read_GLSL('..\Source\Caleidos\Caleidos.fs');
+
+  title := 'SDL2 Shader - ';
+  title += lowerCase({$I %FPCTargetCPU%}) + '-' + lowerCase({$I %FPCTargetOS%});
+
   window := TWindow.Create;
   window.InitWithOpenGL(Title, 800, 600);
 
-  txText := TTexture.Create;
-  txText.LoadFormString(window.PRenderer, '../Resources/admirationpains.ttf',
-    50, 'Basic Window', TColors.White);
-  txText.SetPosition(200, 250);
-
-  event:= Default(TSDL_Event);
+  event := Default(TSDL_Event);
   quit := boolean(false);
   while quit = false do
   begin
@@ -53,13 +53,26 @@ begin
       end;
     end;
 
-    window.SetRenderDrawColorAndClear(TColors.Blue);
-    window.Draw(txText);
+    window.SetRenderDrawColorAndClear(TColors.Black);
+    //window.Draw(txText);
 
     window.Display;
   end;
 
-  Window.Free;
+  window.Free;
+end;
+
+function Read_GLSL(fileName: string): string;
+var
+  strList: TStringList;
+begin
+  strList := TStringList.Create();
+  try
+    strList.LoadFromFile(fileName.ToAnsiString);
+    Result := string(strList.Text);
+  finally
+    strList.Free;
+  end;
 end;
 
 end.
