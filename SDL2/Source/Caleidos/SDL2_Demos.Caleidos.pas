@@ -10,9 +10,9 @@ uses
   SysUtils,
   libSDL2,
   DeepStar.Utils,
-  DeepStar.SDL2_ADV.Windows,
-  DeepStar.SDL2_ADV.Texture,
-  DeepStar.SDL2_ADV.Utils;
+  DeepStar.SDL2_Lib.Windows,
+  DeepStar.SDL2_Lib.Texture,
+  DeepStar.SDL2_Lib.Utils;
 
 var
   FragmentShader, title: string;
@@ -27,7 +27,7 @@ implementation
 
 procedure Main;
 begin
-  FragmentShader. := Read_GLSL('..\Source\Caleidos\Caleidos.fs');
+  FragmentShader := Read_GLSL('..\Source\Caleidos\Caleidos.fs');
 
   title := 'SDL2 Shader - ';
   title += lowerCase({$I %FPCTargetCPU%}) + '-' + lowerCase({$I %FPCTargetOS%});

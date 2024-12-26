@@ -9,9 +9,9 @@ uses
   Classes,
   SysUtils,
   libSDL2,
-  DeepStar.SDL2_ADV.Windows,
-  DeepStar.SDL2_ADV.Texture,
-  DeepStar.SDL2_ADV.Utils;
+  DeepStar.SDL2_Lib.Windows,
+  DeepStar.SDL2_Lib.Texture,
+  DeepStar.SDL2_Lib.Utils;
 
 var
   title: string;
@@ -31,7 +31,7 @@ begin
   window.InitWithOpenGL(Title, 800, 600);
 
   txText := TTexture.Create;
-  txText.LoadFormString(window.PRenderer, '../Resources/admirationpains.ttf',
+  txText.LoadFormString(window.Renderer, '../Resources/admirationpains.ttf',
     50, 'Basic Window', TColors.White);
   txText.SetPosition(200, 250);
 

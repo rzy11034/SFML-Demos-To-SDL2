@@ -12,27 +12,34 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <CursorPos X="3" Y="15"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <CursorPos X="7" Y="20"/>
-        <UsageCount Value="33"/>
+        <CursorPos X="22" Y="17"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="32"/>
-        <CursorPos X="44" Y="59"/>
-        <UsageCount Value="32"/>
-        <Loaded Value="True"/>
+        <CursorPos X="20" Y="31"/>
+        <UsageCount Value="36"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <CursorPos X="3" Y="14"/>
+        <UsageCount Value="28"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Utils\DeepStar.SDL2_ADV.Texture.pas"/>
@@ -203,17 +210,6 @@
         <UsageCount Value="10"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="38"/>
-        <CursorPos X="56" Y="62"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\classes\stringl.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
@@ -241,95 +237,40 @@
         <CursorPos X="25" Y="131"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="..\..\DeepStar-Lib\CodeTyphon\Package\Source\SDL2_Lib\DeepStar.SDL2_Lib.Texture.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="12"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\DeepStar-Lib\CodeTyphon\Package\Source\SDL2_Lib\DeepStar.SDL2_Lib.Windows.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="12"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\DeepStar-Lib\CodeTyphon\Package\Source\SDL2_Lib\DeepStar.SDL2_Lib.Utils.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="12"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\DeepStar-Lib\CodeTyphon\Package\Source\SDL2_Lib\DeepStar.SDL2_Lib.Timer.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <CursorPos X="26" Y="8"/>
+        <UsageCount Value="10"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="21">
+    <JumpHistory>
       <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="32" TopLine="17"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="32" TopLine="17"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="33" TopLine="17"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="29" Column="42" TopLine="13"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="32" TopLine="13"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="32" TopLine="16"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="33" TopLine="17"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="36" Column="34" TopLine="19"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="57" Column="52" TopLine="35"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="60" Column="45" TopLine="41"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="25" Column="5"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="28" TopLine="12"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="21" Column="27" TopLine="7"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="19" Column="25" TopLine="7"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="21" Column="23"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="36" Column="15" TopLine="13"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="40" Column="27" TopLine="16"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="26" TopLine="15"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="29" Column="5" TopLine="9"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="36" Column="5" TopLine="17"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="62" TopLine="42"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
-        <Caret Line="72" Column="22" TopLine="43"/>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="17" Column="22"/>
       </Position>
     </JumpHistory>
     <RunParams>

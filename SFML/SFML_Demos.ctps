@@ -18,10 +18,9 @@
       <Unit>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <CursorPos X="16"/>
+        <CursorPos X="20" Y="18"/>
         <UsageCount Value="67"/>
         <Loaded Value="True"/>
       </Unit>
@@ -76,10 +75,11 @@
       <Unit>
         <Filename Value="SFML_Binding\CSFMLWindow.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="43"/>
         <UsageCount Value="37"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Basic.pas"/>
@@ -93,12 +93,11 @@
       <Unit>
         <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="39"/>
-        <CursorPos X="40" Y="48"/>
+        <TopLine Value="13"/>
+        <CursorPos X="99" Y="150"/>
         <UsageCount Value="37"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Circle.pas"/>
@@ -258,11 +257,12 @@
       <Unit>
         <Filename Value="Source\SFML_Demos.Window.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="61"/>
-        <CursorPos X="6" Y="77"/>
+        <TopLine Value="103"/>
+        <CursorPos X="57" Y="88"/>
         <UsageCount Value="21"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\DeepStar-Lib\SFML_Binding\Source\CSFMLAudio.pas"/>
@@ -760,8 +760,41 @@
         <CursorPos X="21" Y="22169"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="..\..\DeepStar-Lib\CodeTyphon\Package\Source\SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\DeepStar-Lib\CodeTyphon\Package\Source\SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Timer.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\DeepStar-Lib\CodeTyphon\Package\Source\SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Utils.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\DeepStar-Lib\CodeTyphon\Package\Source\SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <FRMtype Value="0"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="0"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="18">
+    <JumpHistory HistoryIndex="16">
       <Position>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
         <Caret Line="18" Column="20" TopLine="7"/>
@@ -827,16 +860,8 @@
         <Caret Line="5" Column="24"/>
       </Position>
       <Position>
-        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
-        <Caret Line="159" Column="29" TopLine="5"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
-        <Caret Line="19" Column="5" TopLine="5"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
-        <Caret Line="44" Column="3" TopLine="17"/>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="18" Column="20"/>
       </Position>
     </JumpHistory>
     <RunParams>
