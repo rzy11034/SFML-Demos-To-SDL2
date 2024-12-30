@@ -10,9 +10,8 @@ uses
   SysUtils,
   libSDL2,
   DeepStar.Utils,
-  DeepStar.SDL2_Lib.Windows,
-  DeepStar.SDL2_Lib.Texture,
-  DeepStar.SDL2_Lib.Utils;
+  DeepStar.SDL2_Encapsulation.Windows,
+  DeepStar.SDL2_Encapsulation.Utils;
 
 var
   FragmentShader, title: string;

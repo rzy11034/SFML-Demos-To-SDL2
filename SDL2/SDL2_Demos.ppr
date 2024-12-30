@@ -13,7 +13,7 @@ uses
   SDL2_Loader,
   SDL2_Demos.Main,
   SDL2_Demos.Basic,
-  SDL2_Demos.Caleidos;
+  SDL2_Demos.Caleidos, SDL2_Demos.Circle;
 
 var
   gLoaderSDL2: TLoaderSDL2;

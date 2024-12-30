@@ -21,11 +21,11 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="bin/SDL2_Demos"/>
+            <Filename Value="bin\SDL2_Demos"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Basic;Source\Utils;Source\Caleidos"/>
+            <OtherUnitFiles Value="Source;Source\Basic;Source\Utils;Source\Caleidos;SDL2_Encapsulation;Source\Circle"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
@@ -53,13 +53,10 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="pl_sdl"/>
+      </Item>
+      <Item>
         <PackageName Value="DeepStar_Lib"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_OpenGL"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_SDL"/>
       </Item>
     </RequiredPackages>
     <Units>
@@ -80,17 +77,37 @@
         <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Timer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Utils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="bin/SDL2_Demos"/>
+      <Filename Value="bin\SDL2_Demos"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Source;Source\Basic;Source\Utils;Source\Caleidos"/>
+      <OtherUnitFiles Value="Source;Source\Basic;Source\Utils;Source\Caleidos;SDL2_Encapsulation;Source\Circle"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>

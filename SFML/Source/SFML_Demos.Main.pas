@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  SFML_Demos.Window;
+  SFML_Demos.Circle;
 
 procedure Test;
 begin

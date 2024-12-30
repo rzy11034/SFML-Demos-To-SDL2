@@ -8,13 +8,15 @@ interface
 uses
   Classes,
   SysUtils,
-  DeepStar.Utils;
+  GraphMath,
+  DeepStar.Utils,
+  DeepStar.SDL2_Encapsulation.Utils;
 
 procedure Run;
 
 implementation
 
-uses SDL2_Demos.Basic;
+uses SDL2_Demos.Circle;
 
 procedure Test;
 begin

@@ -8,35 +8,42 @@ interface
 uses
   Classes,
   SysUtils,
+  GL,
   libSDL2,
-  DeepStar.SDL2_Lib.Windows,
-  DeepStar.SDL2_Lib.Texture,
-  DeepStar.SDL2_Lib.Utils;
-
-var
-  title: string;
-  window: TWindow;
-  txText: TTexture;
-  event: TSDL_Event;
-  quit: boolean;
+  DeepStar.SDL2_Encapsulation.Windows,
+  DeepStar.SDL2_Encapsulation.Texture,
+  DeepStar.SDL2_Encapsulation.Utils;
 
 procedure Main;
 
 implementation
 
 procedure Main;
+const
+  SCREEN_WIDTH = 800;
+  SCREEN_HEIGHT = 600;
+var
+  title: string;
+  window: TWindow;
+  txText: TTexture;
+  event: TSDL_Event;
+  window_managed, txText_managed:IInterface;
+  quit: Boolean;
 begin
   title := 'SDL2 Basic Window - ' + lowerCase({$I %FPCTargetCPU%}) + '-' + lowerCase({$I %FPCTargetOS%});
-  window := TWindow.Create;
-  window.InitWithOpenGL(Title, 800, 600);
 
-  txText := TTexture.Create;
+  window_managed := IInterface(TWindow.Create);
+  window := window_managed as TWindow;
+  window.InitWithOpenGL(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+  txText_managed := IInterface(TTexture.Create);
+  txText := txText_managed as TTexture;
   txText.LoadFormString(window.Renderer, '../Resources/admirationpains.ttf',
     50, 'Basic Window', TColors.White);
   txText.SetPosition(200, 250);
 
   event:= Default(TSDL_Event);
-  quit := boolean(false);
+  quit := false;
   while quit = false do
   begin
     while SDL_PollEvent(@event) <> 0 do
@@ -51,6 +58,9 @@ begin
           SDLK_ESCAPE: quit := true;
         end;
       end;
+
+      if event.window.event = SDL_WINDOWEVENT_SIZE_CHANGED then
+        txText.SetScale(window.Width / SCREEN_WIDTH, window.Height / SCREEN_HEIGHT);
     end;
 
     window.SetRenderDrawColorAndClear(TColors.Blue);
@@ -58,8 +68,6 @@ begin
 
     window.Display;
   end;
-
-  Window.Free;
 end;
 
 end.
