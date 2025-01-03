@@ -8,9 +8,10 @@ interface
 uses
   Classes,
   SysUtils,
-  GraphMath,
-  DeepStar.Utils,
-  DeepStar.SDL2_Encapsulation.Utils;
+  {%H-}libSDL2,
+  {%H-}libSDL2_image,
+  {%H-}DeepStar.Utils,
+  {%H-}DeepStar.SDL2_Encapsulation.Utils;
 
 procedure Run;
 
@@ -20,6 +21,7 @@ uses SDL2_Demos.Circle;
 
 procedure Test;
 begin
+  //i := SDL_MapRGB
   Exit;
 end;
 

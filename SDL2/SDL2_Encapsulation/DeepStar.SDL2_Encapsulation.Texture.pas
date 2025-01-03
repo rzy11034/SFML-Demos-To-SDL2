@@ -33,7 +33,7 @@ type
   private
     _Height: integer;
     _Width: integer;
-    _Data: PSDL_Texture;
+    _Texture: PSDL_Texture;
     _Position: TPoint;
     _Scale: TScale;
 
@@ -50,6 +50,10 @@ type
     destructor Destroy; override;
 
     function GetScale: TTexture.TScale;
+    function ToPSDL_Texture: PSDL_Texture;
+
+    // 从当前 windowsWindoesSurface 生成纹理
+    procedure CreateFormFromWindoesSurface(win: PSDL_Window);
 
     // 指定路径图像创建纹理
     procedure LoadFromFile(renderer: PSDL_Renderer; path: string);
@@ -65,7 +69,6 @@ type
 
     property Width: integer read __GetWidth;
     property Height: integer read __GetHeight;
-    property Data: PSDL_Texture read __GetData;
     property Position: TPoint read __GetPosition;
     property BoundsRect: TRect read __GetBoundsRect;
   end;
@@ -77,6 +80,24 @@ implementation
 constructor TTexture.Create;
 begin
   _Scale := TScale.Create;
+end;
+
+procedure TTexture.CreateFormFromWindoesSurface(win: PSDL_Window);
+var
+  surface: PSDL_Surface;
+  renderer: PSDL_Renderer;
+begin
+  renderer := PSDL_Renderer(nil);
+  renderer := SDL_GetRenderer(win);
+
+  surface := PSDL_Surface(nil);
+  surface := SDL_setsGetWindowSurface(win);
+
+  _Width := surface^.w;
+  _Height := surface^.h;
+  _Texture := SDL_CreateTextureFromSurface(renderer, surface);
+
+  exit;
 end;
 
 destructor TTexture.Destroy;
@@ -134,7 +155,7 @@ begin
     // Get image dimensions
     _Width := textSurface^.w;
     _Height := textSurface^.h;
-    _Data := newTexture;
+    _Texture := newTexture;
   finally
     TTF_CloseFont(font);
     SDL_FreeSurface(textSurface);
@@ -175,7 +196,7 @@ begin
 
       _Width := loadedSurface^.w;
       _Height := loadedSurface^.h;
-      _Data := newTexture;
+      _Texture := newTexture;
     finally
       // Get rid of old loaded surface
       SDL_FreeSurface(loadedSurface);
@@ -185,7 +206,7 @@ end;
 
 procedure TTexture.SetColor(color: TColors);
 begin
-  SDL_SetTextureColorMod(_Data, color.R, color.G, color.B);
+  SDL_SetTextureColorMod(_Texture, color.R, color.G, color.B);
 end;
 
 procedure TTexture.SetPosition(ax, ay: integer);
@@ -204,12 +225,17 @@ begin
   _Scale.y := y;
 end;
 
+function TTexture.ToPSDL_Texture: PSDL_Texture;
+begin
+  Result := _Texture;
+end;
+
 procedure TTexture.__Free;
 begin
-  if _Data <> nil then
+  if _Texture <> nil then
   begin
-    SDL_DestroyTexture(_Data);
-    _Data := nil;
+    SDL_DestroyTexture(_Texture);
+    _Texture := nil;
 
     _Height := 0;
     _Width := 0;
@@ -227,7 +253,7 @@ end;
 
 function TTexture.__GetData: PSDL_Texture;
 begin
-  Result := _Data;
+  Result := _Texture;
 end;
 
 function TTexture.__GetHeight: integer;

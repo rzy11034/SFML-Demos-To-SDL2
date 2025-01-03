@@ -60,7 +60,6 @@ function SDL_Rect(aX, aY, aW, aH: integer): TSDL_Rect;
 function SDL_Rect(rc: TRect): TSDL_Rect;
 
 function SDL_Color(r, g, b, a: byte): TSDL_Color;
-function SDL_Color(color: TColor; alpha: byte = $FF): TSDL_Color;
 function SDL_Color(alphaColor: TAlphaColor): TSDL_Color;
 
 implementation
@@ -125,14 +124,6 @@ begin
   Result.b := b;
   Result.g := g;
   Result.a := a;
-end;
-
-function SDL_Color(color: TColor; alpha: byte): TSDL_Color;
-var
-  temp: TColors;
-begin
-  temp := TColors(color);
-  Result := SDL_Color(temp.R, temp.G, temp.B, alpha);
 end;
 
 function SDL_Color(alphaColor: TAlphaColor): TSDL_Color;

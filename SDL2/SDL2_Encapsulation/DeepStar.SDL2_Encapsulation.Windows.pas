@@ -66,7 +66,7 @@ type
     function GetMousePos: TPoint;
 
     // 返回PSDL_Window
-    function ToPtr: PSDL_Window;
+    function ToPSDL_Window: PSDL_Window;
 
     procedure Init(caption: string; width, height: uint32);
     procedure Init(caption: string; winPosX, winPosY, width, height: int32; flags: uint32);
@@ -143,7 +143,7 @@ begin
   scale := texture.GetScale;
   SDL_RenderSetScale(_Renderer, scale.x, scale.y);
 
-  SDL_RenderCopy(_Renderer, texture.Data, nil, SDL_Rect(destRect).ToPtr);
+  SDL_RenderCopy(_Renderer, texture.ToPSDL_Texture, nil, SDL_Rect(destRect).ToPtr);
 end;
 
 procedure TWindow.Draw(const texture: TTexture; srcRect, destRect: TRect);
@@ -156,7 +156,7 @@ begin
 
   srcP := SDL_Rect(srcRect).ToPtr;
   destP := SDL_Rect(destRect).ToPtr;
-  SDL_RenderCopy(_Renderer, texture.Data, srcP, destP);
+  SDL_RenderCopy(_Renderer, texture.ToPSDL_Texture, srcP, destP);
 end;
 
 procedure TWindow.Draw(const texture: TTexture; destRect: TRect);
@@ -166,7 +166,7 @@ begin
   scale := texture.GetScale;
   SDL_RenderSetScale(_Renderer, scale.x, scale.y);
 
-  SDL_RenderCopy(_Renderer, texture.Data, nil, SDL_Rect(destRect).ToPtr);
+  SDL_RenderCopy(_Renderer, texture.ToPSDL_Texture, nil, SDL_Rect(destRect).ToPtr);
 end;
 
 function TWindow.GetMousePos: TPoint;
@@ -285,7 +285,7 @@ begin
   mbd.flags := flag;
   mbd.title := title.ToPAnsiChar;
   mbd._message := message.ToPAnsiChar;
-  mbd.window := Self.ToPtr;
+  mbd.window := Self.ToPSDL_Window;
   mbd.numbuttons := 2;
   mbd.Buttons := @mbts[0];
   mbd.colorScheme := nil;//@colorScheme;
@@ -298,7 +298,7 @@ begin
   Result := res;
 end;
 
-function TWindow.ToPtr: PSDL_Window;
+function TWindow.ToPSDL_Window: PSDL_Window;
 begin
   Result := _Window;
 end;

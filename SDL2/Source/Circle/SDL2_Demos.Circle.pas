@@ -10,9 +10,11 @@ uses
   SysUtils,
   GL,
   libSDL2,
+  libSDL2_image,
   libSDL2_gfx,
   DeepStar.SDL2_Encapsulation.Utils,
-  DeepStar.SDL2_Encapsulation.Windows;
+  DeepStar.SDL2_Encapsulation.Windows,
+  DeepStar.SDL2_Encapsulation.Texture;
 
 procedure Main;
 
@@ -24,14 +26,16 @@ const
   SCREEN_WIDTH = RADIUS * 2;
   SCREEN_HEIGHT = RADIUS * 2;
 var
-  win_managed: IInterface;
+  win_managed, tx_managed: IInterface;
   win: TWindow;
   title: String;
   event: TSDL_Event;
   quit: Boolean;
-  c: TAlphaColors;
-  surface, tx: PSDL_Surface;
+  surface: PSDL_Surface;
   zoomX, zoomY: Real;
+  c: TSDL_Color;
+  r: PSDL_Renderer;
+  tx: TTexture;
 begin
   title := '';
   title := 'SDL2 Circle - ' + lowerCase({$I %FPCTargetCPU%}) + '-'
@@ -41,9 +45,20 @@ begin
   win := win_managed as TWindow;
   win.InitWithOpenGL(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-  surface := SDL_GetWindowSurface(win.ToPtr);
 
-  event:= Default(TSDL_Event);
+
+
+  win.SetRenderDrawColorAndClear;
+  c := SDL_Color(TAlphaColors.Red);
+
+  libSDL2_gfx.aaCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
+  libSDL2_gfx.filledCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
+
+  tx_managed := IInterface(TTexture.Create);
+  tx := tx_managed as TTexture;
+  tx.CreateFormFromWindoesSurface(win.ToPSDL_Window);
+
+  event := Default(TSDL_Event);
   quit := false;
   while quit = false do
   begin
@@ -62,24 +77,27 @@ begin
 
       if event.window.event = SDL_WINDOWEVENT_SIZE_CHANGED then
       begin
-        tx := PSDL_Surface(nil);
-        tx := SDL_GetWindowSurface(win.ToPtr);
-
-        zoomX := win.Width / SCREEN_WIDTH;
-        zoomY := win.Height / SCREEN_HEIGHT;
-
-
-
-
+        //tx := surface;
+        ////tx := SDL_GetWindowSurface(win.ToPtr);
+        //
+        //zoomX := win.Width / SCREEN_WIDTH;
+        //zoomY := win.Height / SCREEN_HEIGHT;
+        //
+        //
+        //tx := libSDL2_gfx.rotozoomSurfaceXY(surface, 0, zoomX, zoomY, 32);
+        //
+        //SDL_UpperBlit(tx, nil, surface, nil);
       end;
+
+
     end;
 
     win.SetRenderDrawColorAndClear;
-    c := TAlphaColors.Create(TAlphaColors.Red);
+
     libSDL2_gfx.aaCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
     libSDL2_gfx.filledCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
-    surface := libSDL2_gfx.rotozoomSurfaceXY(surface, 0, zoomX, zoomY, 32);
 
+    //win.Draw(tx);
     win.Display;
   end;
 end;
