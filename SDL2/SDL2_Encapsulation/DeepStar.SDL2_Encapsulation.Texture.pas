@@ -49,6 +49,9 @@ type
     constructor Create;
     destructor Destroy; override;
 
+    // 新建一个空白 纹理
+    function CreateBlank(win: PSDL_Window; width, Height: integer): Boolean;
+
     function GetScale: TTexture.TScale;
     function ToPSDL_Texture: PSDL_Texture;
 
@@ -61,6 +64,9 @@ type
     // 从字符串创建纹理
     procedure LoadFormString(renderer: PSDL_Renderer; ttfName: string; ttfSize: integer;
       Text: string; color: TSDL_Color);
+
+    //将当前纹理设置为渲染目标
+    procedure setAsRenderTarget(renderer: PSDL_Renderer);
 
     procedure SetPosition(ax, ay: integer);
     procedure SetPosition(ap: TPoint);
@@ -82,6 +88,43 @@ begin
   _Scale := TScale.Create;
 end;
 
+function TTexture.CreateBlank(win: PSDL_Window; width, Height: integer): Boolean;
+var
+  renderer: PSDL_Renderer;
+  errString: String;
+begin
+  __Free;
+
+  renderer := PSDL_Renderer(nil);
+  renderer := SDL_GetRenderer(win);
+
+  _Texture := SDL_CreateTexture
+  (
+    renderer,
+    SDL_PIXELFORMAT_RGBA8888,
+    SDL_TEXTUREACCESS_TARGET,
+    Width,
+    Height
+  );
+
+  if _Texture = nil then
+  begin
+    errString := Format
+    (
+      'Unable to create streamable blank texture! SDL Error: %s',
+      [SDL_GetError()]
+    ).ToUString;
+    raise Exception.Create(errString.ToAnsiString);
+  end
+  else
+  begin
+    _Width := Width;
+    _Height := Height;
+  end;
+
+  Result := _Texture <> nil;
+end;
+
 procedure TTexture.CreateFormFromWindoesSurface(win: PSDL_Window);
 var
   surface: PSDL_Surface;
@@ -91,13 +134,11 @@ begin
   renderer := SDL_GetRenderer(win);
 
   surface := PSDL_Surface(nil);
-  surface := SDL_setsGetWindowSurface(win);
+  surface := SDL_GetWindowSurface(win);
 
   _Width := surface^.w;
   _Height := surface^.h;
   _Texture := SDL_CreateTextureFromSurface(renderer, surface);
-
-  exit;
 end;
 
 destructor TTexture.Destroy;
@@ -202,6 +243,11 @@ begin
       SDL_FreeSurface(loadedSurface);
     end;
   end;
+end;
+
+procedure TTexture.setAsRenderTarget(renderer: PSDL_Renderer);
+begin
+  SDL_SetRenderTarget(renderer, _Texture);
 end;
 
 procedure TTexture.SetColor(color: TColors);

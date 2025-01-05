@@ -45,18 +45,20 @@ begin
   win := win_managed as TWindow;
   win.InitWithOpenGL(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-
-
-
-  win.SetRenderDrawColorAndClear;
-  c := SDL_Color(TAlphaColors.Red);
-
-  libSDL2_gfx.aaCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
-  libSDL2_gfx.filledCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
-
   tx_managed := IInterface(TTexture.Create);
   tx := tx_managed as TTexture;
-  tx.CreateFormFromWindoesSurface(win.ToPSDL_Window);
+  tx.CreateBlank(win.ToPSDL_Window, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+  //if tx.CreateBlank(win.ToPSDL_Window, SCREEN_WIDTH, SCREEN_HEIGHT) then
+  //begin
+  //  tx.setAsRenderTarget(win.Renderer);
+  //
+  //  win.SetRenderDrawColorAndClear;
+  //
+  //  c := SDL_Color(TAlphaColors.Red);
+  //  libSDL2_gfx.aaCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
+  //  libSDL2_gfx.filledCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
+  //end;
 
   event := Default(TSDL_Event);
   quit := false;
@@ -92,13 +94,16 @@ begin
 
     end;
 
+    tx.setAsRenderTarget(win.Renderer);
     win.SetRenderDrawColorAndClear;
-
+    SDL_SetRenderTarget(win.Renderer, tx.ToPSDL_Texture);
     libSDL2_gfx.aaCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
     libSDL2_gfx.filledCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
 
-    //win.Draw(tx);
+    win.Draw(tx);
     win.Display;
+
+    //TSDL_TextureAccess
   end;
 end;
 

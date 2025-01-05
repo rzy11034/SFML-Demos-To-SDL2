@@ -11,9 +11,14 @@ uses
   SysUtils,
   DeepStar.Utils,
   SDL2_Loader,
+  DeepStar.SDL2_Encapsulation.Texture,
+  DeepStar.SDL2_Encapsulation.Timer,
+  DeepStar.SDL2_Encapsulation.Utils,
+  DeepStar.SDL2_Encapsulation.Windows,
   SDL2_Demos.Main,
   SDL2_Demos.Basic,
-  SDL2_Demos.Caleidos, SDL2_Demos.Circle;
+  SDL2_Demos.Caleidos,
+  SDL2_Demos.Circle;
 
 var
   gLoaderSDL2: TLoaderSDL2;
