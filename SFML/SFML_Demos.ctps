@@ -18,6 +18,7 @@
       <Unit>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <CursorPos X="27" Y="15"/>
@@ -101,13 +102,11 @@
       <Unit>
         <Filename Value="Source\SFML_Demos.Circle.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="13"/>
-        <CursorPos X="30" Y="42"/>
+        <CursorPos X="55" Y="30"/>
         <UsageCount Value="36"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Circles.pas"/>

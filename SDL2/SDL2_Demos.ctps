@@ -19,9 +19,10 @@
       <Unit>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <CursorPos X="22" Y="12"/>
+        <CursorPos X="22" Y="20"/>
         <UsageCount Value="218"/>
         <Loaded Value="True"/>
       </Unit>
@@ -30,8 +31,8 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="10"/>
-        <CursorPos X="11" Y="12"/>
+        <TopLine Value="35"/>
+        <CursorPos X="7" Y="66"/>
         <UsageCount Value="217"/>
       </Unit>
       <Unit>
@@ -45,12 +46,11 @@
       <Unit>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="203"/>
-        <CursorPos X="3" Y="250"/>
-        <UsageCount Value="197"/>
-        <Loaded Value="True"/>
+        <TopLine Value="265"/>
+        <CursorPos X="64" Y="279"/>
+        <UsageCount Value="200"/>
       </Unit>
       <Unit>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Timer.pas"/>
@@ -59,35 +59,34 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="197"/>
+        <UsageCount Value="200"/>
       </Unit>
       <Unit>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="20"/>
-        <CursorPos X="3" Y="22"/>
-        <UsageCount Value="197"/>
+        <TopLine Value="37"/>
+        <CursorPos X="20" Y="139"/>
+        <UsageCount Value="200"/>
       </Unit>
       <Unit>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="291"/>
-        <CursorPos X="3" Y="321"/>
-        <UsageCount Value="197"/>
+        <TopLine Value="111"/>
+        <CursorPos X="5" Y="129"/>
+        <UsageCount Value="200"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="38"/>
-        <CursorPos X="35" Y="97"/>
-        <UsageCount Value="197"/>
+        <TopLine Value="51"/>
+        <CursorPos X="11" Y="78"/>
+        <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -136,9 +135,9 @@
         <UnitName Value="libSDL2"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1624"/>
-        <CursorPos X="22" Y="1635"/>
-        <UsageCount Value="25"/>
+        <TopLine Value="4272"/>
+        <CursorPos X="4" Y="4292"/>
+        <UsageCount Value="26"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_SDL\source\libsdl2_gfx.pas"/>
@@ -146,8 +145,8 @@
         <UnitName Value="libSDL2_gfx"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="132"/>
-        <CursorPos X="4" Y="218"/>
+        <TopLine Value="193"/>
+        <CursorPos X="26" Y="200"/>
         <UsageCount Value="40"/>
       </Unit>
       <Unit>
@@ -290,144 +289,94 @@
       <Unit>
         <Filename Value="..\..\SDL2-Tutorials\Source\43_render_to_texture\Case43_render_to_texture.pas"/>
         <FRMtype Value="0"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="180"/>
-        <CursorPos X="23" Y="202"/>
-        <UsageCount Value="32"/>
-        <Loaded Value="True"/>
+        <TopLine Value="195"/>
+        <CursorPos X="20" Y="211"/>
+        <UsageCount Value="34"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\SDL2-Tutorials\Source\43_render_to_texture\Case43_render_to_texture.Texture.pas"/>
         <FRMtype Value="0"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="397"/>
-        <CursorPos X="46" Y="402"/>
-        <UsageCount Value="32"/>
-        <Loaded Value="True"/>
+        <TopLine Value="26"/>
+        <CursorPos X="93" Y="241"/>
+        <UsageCount Value="34"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
+    <JumpHistory HistoryIndex="17">
       <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="56" Column="27" TopLine="44"/>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="75" Column="23" TopLine="54"/>
       </Position>
       <Position>
         <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="56" Column="24" TopLine="44"/>
+        <Caret Line="74" Column="12"/>
       </Position>
       <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="62" Column="18" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="64" Column="72" TopLine="44"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="59" Column="12" TopLine="30"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="59" Column="42" TopLine="30"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="61" Column="5" TopLine="30"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="60" Column="11" TopLine="46"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="61" TopLine="46"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="60" Column="63" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="85" Column="32" TopLine="64"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="92" TopLine="84"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="93" TopLine="84"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
         <Caret Line="94" TopLine="84"/>
       </Position>
       <Position>
-        <Filename Value="..\..\SDL2-Tutorials\Source\43_render_to_texture\Case43_render_to_texture.pas"/>
-        <Caret Line="234" Column="18" TopLine="192"/>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="68" TopLine="59"/>
       </Position>
       <Position>
         <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="56" Column="6" TopLine="38"/>
+        <Caret Line="94" Column="11" TopLine="66"/>
       </Position>
       <Position>
         <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="49" Column="32" TopLine="35"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="90" Column="3" TopLine="82"/>
-      </Position>
-      <Position>
-        <Filename Value="..\..\SDL2-Tutorials\Source\43_render_to_texture\Case43_render_to_texture.Texture.pas"/>
-        <Caret Line="51" Column="26" TopLine="45"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="46" Column="19" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="236" Column="3" TopLine="232"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="53" Column="41" TopLine="47"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="105" Column="61" TopLine="98"/>
-      </Position>
-      <Position>
-        <Filename Value="..\..\SDL2-Tutorials\Source\43_render_to_texture\Case43_render_to_texture.Texture.pas"/>
-        <Caret Line="61" Column="25" TopLine="47"/>
-      </Position>
-      <Position>
-        <Filename Value="..\..\SDL2-Tutorials\Source\43_render_to_texture\Case43_render_to_texture.Texture.pas"/>
-        <Caret Line="401" Column="3" TopLine="397"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="69" Column="32" TopLine="44"/>
-      </Position>
-      <Position>
-        <Filename Value="..\..\SDL2-Tutorials\Source\43_render_to_texture\Case43_render_to_texture.Texture.pas"/>
-        <Caret Line="61" Column="24" TopLine="45"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="248" Column="62" TopLine="247"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="69" Column="15" TopLine="53"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="250" Column="43" TopLine="246"/>
+        <Caret Line="93" Column="63" TopLine="66"/>
       </Position>
       <Position>
         <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="56" Column="3" TopLine="41"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="58" Column="15" TopLine="82"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="14" Column="20" TopLine="4"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="51" TopLine="49"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="53" TopLine="49"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="55" TopLine="49"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="57" TopLine="49"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="59" TopLine="49"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="60" TopLine="49"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="57" Column="38" TopLine="44"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
-        <Caret Line="97" Column="35" TopLine="83"/>
+        <Caret Line="50" Column="7" TopLine="50"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -435,4 +384,11 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <Watches>
+      <Item ClassAutoCast="True">
+        <Expression Value="tx"/>
+      </Item>
+    </Watches>
+  </Debugging>
 </CONFIG>

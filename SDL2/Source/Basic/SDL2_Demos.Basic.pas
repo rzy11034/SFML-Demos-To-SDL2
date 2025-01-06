@@ -36,10 +36,10 @@ begin
   window := window_managed as TWindow;
   window.InitWithOpenGL(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-  txText_managed := IInterface(TTexture.Create);
+  txText_managed := IInterface(TTexture.Create(window.Renderer));
   txText := txText_managed as TTexture;
-  txText.LoadFormString(window.Renderer, '../Resources/admirationpains.ttf',
-    50, 'Basic Window', TColors.White);
+  txText.LoadFormString('../Resources/admirationpains.ttf', 50, 'Basic Window',
+    TColors.White);
   txText.SetPosition(200, 250);
 
   event:= Default(TSDL_Event);
@@ -63,8 +63,8 @@ begin
         txText.SetScale(window.Width / SCREEN_WIDTH, window.Height / SCREEN_HEIGHT);
     end;
 
-    window.SetRenderDrawColorAndClear(TColors.Blue);
-    window.Draw(txText);
+    //window.SetRenderDrawColorAndClear(TColors.Blue);
+    txText.Render;
 
     window.Display;
   end;

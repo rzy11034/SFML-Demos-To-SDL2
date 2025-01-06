@@ -71,10 +71,9 @@ type
     procedure Init(caption: string; width, height: uint32);
     procedure Init(caption: string; winPosX, winPosY, width, height: int32; flags: uint32);
     procedure InitWithOpenGL(caption: string; width, height: uint32);
-    procedure Draw(const texture: TTexture);
-    procedure Draw(const texture: TTexture; destRect: TRect);
-    procedure Draw(const texture: TTexture; srcRect, destRect: TRect);
+
     procedure Display;
+
     procedure SetRenderDrawColorAndClear;
     procedure SetRenderDrawColorAndClear(color: TSDL_Color);
 
@@ -127,46 +126,6 @@ end;
 procedure TWindow.Display;
 begin
   SDL_RenderPresent(_Renderer);
-end;
-
-procedure TWindow.Draw(const texture: TTexture);
-var
-  destRect: TRect;
-  scale: TTexture.TScale;
-begin
-  destRect := Bounds(
-    texture.Position.x,
-    texture.Position.y,
-    texture.Width,
-    texture.Height);
-
-  scale := texture.GetScale;
-  SDL_RenderSetScale(_Renderer, scale.x, scale.y);
-
-  SDL_RenderCopy(_Renderer, texture.ToPSDL_Texture, nil, SDL_Rect(destRect).ToPtr);
-end;
-
-procedure TWindow.Draw(const texture: TTexture; srcRect, destRect: TRect);
-var
-  srcP, destP: PSDL_Rect;
-  scale: TTexture.TScale;
-begin
-  scale := texture.GetScale;
-  SDL_RenderSetScale(_Renderer, scale.x, scale.y);
-
-  srcP := SDL_Rect(srcRect).ToPtr;
-  destP := SDL_Rect(destRect).ToPtr;
-  SDL_RenderCopy(_Renderer, texture.ToPSDL_Texture, srcP, destP);
-end;
-
-procedure TWindow.Draw(const texture: TTexture; destRect: TRect);
-var
-  scale: TTexture.TScale;
-begin
-  scale := texture.GetScale;
-  SDL_RenderSetScale(_Renderer, scale.x, scale.y);
-
-  SDL_RenderCopy(_Renderer, texture.ToPSDL_Texture, nil, SDL_Rect(destRect).ToPtr);
 end;
 
 function TWindow.GetMousePos: TPoint;

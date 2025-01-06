@@ -32,6 +32,7 @@ type
 
   private
     _Height: integer;
+    _Renderer: PSDL_Renderer;
     _Width: integer;
     _Texture: PSDL_Texture;
     _Position: TPoint;
@@ -46,27 +47,39 @@ type
     procedure __Free;
 
   public
-    constructor Create;
+    constructor Create(renderer: PSDL_Renderer);
     destructor Destroy; override;
 
     // 新建一个空白 纹理
-    function CreateBlank(win: PSDL_Window; width, Height: integer): Boolean;
+    function CreateBlank(width, Height: integer): Boolean;
 
     function GetScale: TTexture.TScale;
     function ToPSDL_Texture: PSDL_Texture;
 
-    // 从当前 windowsWindoesSurface 生成纹理
-    procedure CreateFormFromWindoesSurface(win: PSDL_Window);
-
     // 指定路径图像创建纹理
-    procedure LoadFromFile(renderer: PSDL_Renderer; path: string);
+    procedure LoadFromFile(path: string);
 
     // 从字符串创建纹理
-    procedure LoadFormString(renderer: PSDL_Renderer; ttfName: string; ttfSize: integer;
-      Text: string; color: TSDL_Color);
+    procedure LoadFormString(ttfName: string; ttfSize: integer; Text: string;
+      color: TSDL_Color);
 
-    //将当前纹理设置为渲染目标
-    procedure setAsRenderTarget(renderer: PSDL_Renderer);
+    // 将当前纹理设置为渲染目标
+    procedure BeginRender;
+    // 取消当前纹理设置为渲染目标
+    procedure EndRender;
+
+    // 渲染纹理
+    procedure Render(srcrect: PSDL_Rect = nil; dstrect: PSDL_Rect = nil);
+
+    // 在给定点渲染纹理
+    procedure Render
+      (
+        x, y: integer;
+        clip: PSDL_Rect = nil;
+        angle: double = 0;
+        center: PSDL_Point = nil;
+        flip: TSDL_RendererFlags = SDL_FLIP_NONE
+      );
 
     procedure SetPosition(ax, ay: integer);
     procedure SetPosition(ap: TPoint);
@@ -83,24 +96,21 @@ implementation
 
   { TTexture }
 
-constructor TTexture.Create;
+constructor TTexture.Create(renderer: PSDL_Renderer);
 begin
+  _Renderer := renderer;
   _Scale := TScale.Create;
 end;
 
-function TTexture.CreateBlank(win: PSDL_Window; width, Height: integer): Boolean;
+function TTexture.CreateBlank(width, Height: integer): Boolean;
 var
-  renderer: PSDL_Renderer;
   errString: String;
 begin
   __Free;
 
-  renderer := PSDL_Renderer(nil);
-  renderer := SDL_GetRenderer(win);
-
   _Texture := SDL_CreateTexture
   (
-    renderer,
+    _Renderer,
     SDL_PIXELFORMAT_RGBA8888,
     SDL_TEXTUREACCESS_TARGET,
     Width,
@@ -125,22 +135,6 @@ begin
   Result := _Texture <> nil;
 end;
 
-procedure TTexture.CreateFormFromWindoesSurface(win: PSDL_Window);
-var
-  surface: PSDL_Surface;
-  renderer: PSDL_Renderer;
-begin
-  renderer := PSDL_Renderer(nil);
-  renderer := SDL_GetRenderer(win);
-
-  surface := PSDL_Surface(nil);
-  surface := SDL_GetWindowSurface(win);
-
-  _Width := surface^.w;
-  _Height := surface^.h;
-  _Texture := SDL_CreateTextureFromSurface(renderer, surface);
-end;
-
 destructor TTexture.Destroy;
 begin
   __Free;
@@ -153,8 +147,7 @@ begin
   Result.y := _Scale.y;
 end;
 
-procedure TTexture.LoadFormString(renderer: PSDL_Renderer; ttfName: string;
-  ttfSize: integer; Text: string; color: TSDL_Color);
+procedure TTexture.LoadFormString(ttfName: string; ttfSize: integer; Text: string; color: TSDL_Color);
 var
   textSurface: PSDL_Surface;
   errStr: string;
@@ -185,7 +178,7 @@ begin
 
     // Create texture from surface pixels
     newTexture := PSDL_Texture(nil);
-    newTexture := SDL_CreateTextureFromSurface(renderer, textSurface);
+    newTexture := SDL_CreateTextureFromSurface(_Renderer, textSurface);
     if newTexture = nil then
     begin
       errStr := 'Unable to create texture from rendered text! SDL Error: %s';
@@ -203,7 +196,7 @@ begin
   end;
 end;
 
-procedure TTexture.LoadFromFile(renderer: PSDL_Renderer; path: string);
+procedure TTexture.LoadFromFile(path: string);
 var
   fileName, errStr: string;
   loadedSurface: PSDL_Surface;
@@ -227,7 +220,7 @@ begin
     // Create texture from surface pixels
     try
       newTexture := PSDL_Texture(nil);
-      newTexture := SDL_CreateTextureFromSurface(renderer, loadedSurface);
+      newTexture := SDL_CreateTextureFromSurface(_Renderer, loadedSurface);
       if newTexture = nil then
       begin
         errStr := 'Unable to create texture from %s! SDL Error: %s';
@@ -245,9 +238,57 @@ begin
   end;
 end;
 
-procedure TTexture.setAsRenderTarget(renderer: PSDL_Renderer);
+procedure TTexture.Render(x, y: integer; clip: PSDL_Rect; angle: double;
+  center: PSDL_Point; flip: TSDL_RendererFlags);
+var
+  renderQuad: TSDL_Rect;
+  err: Integer;
+  errStr: String;
 begin
-  SDL_SetRenderTarget(renderer, _Texture);
+  // Set rendering space and render to screen
+  renderQuad := Default(TSDL_Rect);
+  renderQuad.x := x;
+  renderQuad.y := y;
+  renderQuad.w := _Width;
+  renderQuad.h := _Height;
+
+  // Set clip rendering dimensions
+  if clip <> nil then
+  begin
+    renderQuad.w := clip^.w;
+    renderQuad.h := clip^.h;
+  end;
+
+  err := 0;
+  err := SDL_RenderCopyEx(_Renderer, _Texture, clip, @renderQuad, angle, center,
+    flip);
+
+  if not err.ToBoolean then
+  begin
+    errStr := 'Render failure! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
+
+procedure TTexture.Render(srcrect: PSDL_Rect; dstrect: PSDL_Rect);
+var
+  err: integer;
+  errStr: String;
+begin
+  err := SDL_RenderCopy(_Renderer, _Texture, srcrect, dstrect);
+
+  if err <> 0 then
+  begin
+    errStr := 'Render failure! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
+
+procedure TTexture.BeginRender;
+begin
+  SDL_SetRenderTarget(_Renderer, _Texture);
 end;
 
 procedure TTexture.SetColor(color: TColors);
@@ -274,6 +315,22 @@ end;
 function TTexture.ToPSDL_Texture: PSDL_Texture;
 begin
   Result := _Texture;
+end;
+
+procedure TTexture.EndRender;
+var
+  err: Integer;
+  errStr: String;
+begin
+  err := 0;
+  err := SDL_SetRenderTarget(_Renderer, nil);
+
+  if err <> 0 then
+  begin
+    errStr := 'Unsetting the current texture to render target failed! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
 end;
 
 procedure TTexture.__Free;
