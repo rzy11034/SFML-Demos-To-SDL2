@@ -50,6 +50,9 @@ type
     function ToPtr: PSDL_Rect;
   end;
 
+var
+  SDL_BlitSurface: TTSDL_UpperBlit;
+
 operator := (AColor: TColor): TSDL_Color;
 operator := (AColor: TAlphaColor): TSDL_Color;
 operator := (AColor: TColor): TColors;
@@ -64,10 +67,7 @@ function SDL_Rect(rc: TRect): TSDL_Rect;
 function RGBA_Color(color: TColor): UInt32;
 function RGBA_Color(color: TAlphaColor): UInt32;
 
-var
-  SDL_BlitSurface: TTSDL_UpperBlit;
-
-procedure Init;
+procedure CostomLibarayLoad;
 
 implementation
 
@@ -154,6 +154,11 @@ begin
 
 end;
 
+procedure CostomLibarayLoad;
+begin
+  SDL_BlitSurface := SDL_UpperBlit;
+end;
+
 { TRectHelper }
 
 function TRectHelper.ToSDL_Rect: TSDL_Rect;
@@ -178,11 +183,6 @@ end;
 function TSDL_RectHelper.ToPtr: PSDL_Rect;
 begin
   Result := @Self;
-end;
-
-procedure Init;
-begin
-  SDL_BlitSurface := SDL_UpperBlit;
 end;
 
 end.
