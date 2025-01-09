@@ -50,8 +50,10 @@ type
     function ToPtr: PSDL_Rect;
   end;
 
-operator := (AColor: TColor): TColors;
+operator := (AColor: TColor): TSDL_Color;
 operator := (AColor: TAlphaColor): TSDL_Color;
+operator := (AColor: TColor): TColors;
+operator := (AColor: TAlphaColor): TAlphaColors;
 
 function SDL_Point(aX, aY: integer): TSDL_Point;
 function SDL_Point(p: TPoint): TSDL_Point;
@@ -59,22 +61,48 @@ function SDL_Point(p: TPoint): TSDL_Point;
 function SDL_Rect(aX, aY, aW, aH: integer): TSDL_Rect;
 function SDL_Rect(rc: TRect): TSDL_Rect;
 
-function SDL_Color(r, g, b, a: byte): TSDL_Color;
-function SDL_Color(alphaColor: TAlphaColor): TSDL_Color;
+function RGBA_Color(color: TColor): UInt32;
+function RGBA_Color(color: TAlphaColor): UInt32;
+
+var
+  SDL_BlitSurface: TTSDL_UpperBlit;
+
+procedure Init;
 
 implementation
 
-operator := (AColor: TColor): TColors;
+operator := (AColor: TColor): TSDL_Color;
+var
+  temp: TColors;
 begin
-  Result := TColors(AColor);
+  temp := TColors(AColor);
+
+  Result.r := temp.R;
+  Result.g := temp.G;
+  Result.b := temp.B;
+  Result.a := $FF;
 end;
 
-operator:=(AColor: TAlphaColor): TSDL_Color;
+operator := (AColor: TAlphaColor): TSDL_Color;
 var
   temp: TAlphaColors;
 begin
-  temp := TAlphaColors.Create(AColor);
-  Result := SDL_Color(temp.R, temp.G, temp.B, temp.A);
+  temp := TAlphaColors(AColor);
+
+  Result.r := temp.R;
+  Result.g := temp.G;
+  Result.b := temp.B;
+  Result.a := temp.A;
+end;
+
+operator := (AColor: TColor): TColors;
+begin
+  Result := AColor;
+end;
+
+operator := (AColor: TAlphaColor): TAlphaColors;
+begin
+  Result := TAlphaColors.Create(AColor);
 end;
 
 function SDL_Point(aX, aY: integer): TSDL_Point;
@@ -116,22 +144,14 @@ begin
   Result := SDL_Rect(rc.Left, rc.Top, rc.Width, rc.Height);
 end;
 
-function SDL_Color(r, g, b, a: byte): TSDL_Color;
+function RGBA_Color(color: TColor): UInt32;
 begin
-  Result := Default(TSDL_Color);
-
-  Result.r := r;
-  Result.b := b;
-  Result.g := g;
-  Result.a := a;
+  //Result := SDL_MapRGB();
 end;
 
-function SDL_Color(alphaColor: TAlphaColor): TSDL_Color;
-var
-  temp: TAlphaColors;
+function RGBA_Color(color: TAlphaColor): UInt32;
 begin
-  temp := TAlphaColors(alphaColor);
-  Result := SDL_Color(temp.R, temp.G, temp.B, temp.A);
+
 end;
 
 { TRectHelper }
@@ -158,6 +178,11 @@ end;
 function TSDL_RectHelper.ToPtr: PSDL_Rect;
 begin
   Result := @Self;
+end;
+
+procedure Init;
+begin
+  SDL_BlitSurface := SDL_UpperBlit;
 end;
 
 end.

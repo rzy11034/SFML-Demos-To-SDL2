@@ -30,6 +30,7 @@ begin
     gLoaderSDL2.Active := true;
 
     try
+      DeepStar.SDL2_Encapsulation.Utils.Init;
       Run;
     except
       on E: Exception do

@@ -52,7 +52,7 @@ begin
       end;
     end;
 
-    window.SetRenderDrawColorAndClear(TColors.Black);
+    //window.SetRenderDrawColorAndClear(TColors.Black);
     //window.Draw(txText);
 
     window.Display;

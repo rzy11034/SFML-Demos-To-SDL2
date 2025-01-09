@@ -32,6 +32,8 @@ const
 type
   TWindow = class(TInterfacedObject)
   private
+    _Context: TSDL_GLContext;
+
     //Window data
     _Window: PSDL_Window;
     _Renderer: PSDL_Renderer;
@@ -168,6 +170,13 @@ end;
 
 procedure TWindow.InitWithOpenGL(caption: string; width, height: uint32);
 begin
+  SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
+  SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+  SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+
+  SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+  SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+
   Self.Init(
     caption,
     SDL_WINDOWPOS_UNDEFINED,
@@ -175,6 +184,8 @@ begin
     width,
     height,
     SDL_WINDOW_RESIZABLE or SDL_WINDOW_OPENGL);
+
+  _Context := SDL_GL_CreateContext(_Window);
 end;
 
 procedure TWindow.SetRenderDrawColorAndClear(color: TSDL_Color);

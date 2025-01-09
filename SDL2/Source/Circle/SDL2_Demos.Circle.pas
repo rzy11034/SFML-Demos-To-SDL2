@@ -39,7 +39,7 @@ var
     tx.BeginRender;
       SDL_SetRenderDrawColor(win.Renderer, $FF, $FF, $FF, $FF);
       SDL_RenderFillRect(win.Renderer, tx.BoundsRect.ToSDL_Rect.ToPtr);
-      c := SDL_Color(TAlphaColors.Red);
+      c := TAlphaColors.Red;
       aaCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
       filledCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
     tx.EndRender;
