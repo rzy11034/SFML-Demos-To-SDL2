@@ -76,8 +76,7 @@ type
 
     procedure Display;
 
-    procedure SetRenderDrawColorAndClear;
-    procedure SetRenderDrawColorAndClear(color: TSDL_Color);
+    procedure SetRenderDrawColorAndClear(color: PSDL_Color = nil);
 
     property Renderer: PSDL_Renderer read __GetRenderer;
     property Width: int32 read __GetWidth;
@@ -188,15 +187,21 @@ begin
   _Context := SDL_GL_CreateContext(_Window);
 end;
 
-procedure TWindow.SetRenderDrawColorAndClear(color: TSDL_Color);
+procedure TWindow.SetRenderDrawColorAndClear(color: PSDL_Color);
+var
+  temp: TSDL_Color;
 begin
-  SDL_SetRenderDrawColor(_Renderer, color.r, color.g, color.b, color.a);
-  SDL_RenderClear(_Renderer);
-end;
+  temp := TSDL_Color(TAlphaColors.White);
+  if color <> nil then
+  begin
+    temp.a := color^.a;
+    temp.r := color^.r;
+    temp.g := color^.g;
+    temp.b := color^.b;
+  end;
 
-procedure TWindow.SetRenderDrawColorAndClear;
-begin
-  Self.SetRenderDrawColorAndClear(SDL_COLOR_WHITE);
+  SDL_SetRenderDrawColor(_Renderer, temp.r, temp.g, temp.b, temp.a);
+  SDL_RenderClear(_Renderer);
 end;
 
 function TWindow.ShowMessageBox(flag: TMessageBoxType; title, message: string): int32;

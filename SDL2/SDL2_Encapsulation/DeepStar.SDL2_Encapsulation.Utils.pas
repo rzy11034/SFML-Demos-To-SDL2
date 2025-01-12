@@ -17,10 +17,6 @@ uses
   DeepStar.DSA.Linear.ArrayList,
   DeepStar.SDL2_Encapsulation.Texture;
 
-const
-  SDL_COLOR_BLACK: TSDL_Color = (r: 0; g: 0; b: 0; a: $FF);
-  SDL_COLOR_WHITE: TSDL_Color = (r: $FF; g: $FF; b: $FF; a: $FF);
-
 type
   float = single;
 
@@ -43,11 +39,17 @@ type
   TRectHelper = type Helper for TRect
   public
     function ToSDL_Rect: TSDL_Rect;
+    function ToPSDL_Rcct: PSDL_Rect;
   end;
 
   TSDL_RectHelper = type helper for TSDL_Rect
   public
     function ToPtr: PSDL_Rect;
+  end;
+
+  TSDL_ColorHelper = type helper for TSDL_Color
+  public
+    function ToPtr: PSDL_Color;
   end;
 
 var
@@ -63,9 +65,6 @@ function SDL_Point(p: TPoint): TSDL_Point;
 
 function SDL_Rect(aX, aY, aW, aH: integer): TSDL_Rect;
 function SDL_Rect(rc: TRect): TSDL_Rect;
-
-function RGBA_Color(color: TColor): UInt32;
-function RGBA_Color(color: TAlphaColor): UInt32;
 
 procedure CostomLibarayLoad;
 
@@ -131,27 +130,17 @@ var
 begin
   res := Default(TSDL_Rect);
 
-  with res do
-  begin
-    x := aX; y := aY; w := aW; h := aH;
-  end;
+  res.x := aX;
+  res.y := aY;
+  res.w := aW;
+  res.h := aH;
 
   Result := res;
 end;
 
 function SDL_Rect(rc: TRect): TSDL_Rect;
 begin
-  Result := SDL_Rect(rc.Left, rc.Top, rc.Width, rc.Height);
-end;
-
-function RGBA_Color(color: TColor): UInt32;
-begin
-  //Result := SDL_MapRGB();
-end;
-
-function RGBA_Color(color: TAlphaColor): UInt32;
-begin
-
+  Result := rc.ToSDL_Rect;
 end;
 
 procedure CostomLibarayLoad;
@@ -160,6 +149,11 @@ begin
 end;
 
 { TRectHelper }
+
+function TRectHelper.ToPSDL_Rcct: PSDL_Rect;
+begin
+  Result := Self.ToSDL_Rect.ToPtr;
+end;
 
 function TRectHelper.ToSDL_Rect: TSDL_Rect;
 var
@@ -181,6 +175,13 @@ end;
 { TSDL_RectHelper }
 
 function TSDL_RectHelper.ToPtr: PSDL_Rect;
+begin
+  Result := @Self;
+end;
+
+{ TSDL_ColorHelper }
+
+function TSDL_ColorHelper.ToPtr: PSDL_Color;
 begin
   Result := @Self;
 end;
