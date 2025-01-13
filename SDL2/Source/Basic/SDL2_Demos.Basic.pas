@@ -24,23 +24,24 @@ const
   SCREEN_HEIGHT = 600;
 var
   title: string;
-  window: TWindow;
-  txText: TTexture;
+  win: TWindow;
+  texture: TTexture;
   event: TSDL_Event;
   window_managed, txText_managed:IInterface;
   quit: Boolean;
+  color: PSDL_Color;
 begin
-  title := 'SDL2 Basic Window - ' + lowerCase({$I %FPCTargetCPU%}) + '-' + lowerCase({$I %FPCTargetOS%});
+  title := 'SDL2 Basic win - ' + lowerCase({$I %FPCTargetCPU%}) + '-' + lowerCase({$I %FPCTargetOS%});
 
   window_managed := IInterface(TWindow.Create);
-  window := window_managed as TWindow;
-  window.InitWithOpenGL(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
+  win := window_managed as TWindow;
+  win.InitWithOpenGL(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-  txText_managed := IInterface(TTexture.Create(window.Renderer));
-  txText := txText_managed as TTexture;
-  txText.LoadFormString('../Resources/admirationpains.ttf', 50, 'Basic Window',
+  txText_managed := IInterface(TTexture.Create(win.Renderer));
+  texture := txText_managed as TTexture;
+  texture.LoadFormString('../Resources/admirationpains.ttf', 80, 'Basic win',
     TColors.White);
-  txText.SetPosition(200, 250);
+  texture.SetPosition(180, 250);
 
   event:= Default(TSDL_Event);
   quit := false;
@@ -60,13 +61,14 @@ begin
       end;
 
       if event.window.event = SDL_WINDOWEVENT_SIZE_CHANGED then
-        txText.SetScale(window.Width / SCREEN_WIDTH, window.Height / SCREEN_HEIGHT);
+        texture.SetScale(win.Width / SCREEN_WIDTH, win.Height / SCREEN_HEIGHT);
     end;
 
-    //window.SetRenderDrawColorAndClear(TColors.Blue);
-    txText.Render;
+    color := TSDL_Color(TAlphaColors.Blue).ToPtr;
+    win.SetRenderDrawColorAndClear(color);
+    texture.Render(texture.Position);
 
-    window.Display;
+    win.Display;
   end;
 end;
 

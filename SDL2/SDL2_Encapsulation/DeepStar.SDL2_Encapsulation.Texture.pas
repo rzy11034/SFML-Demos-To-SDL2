@@ -72,6 +72,8 @@ type
     procedure Render(srcrect: PSDL_Rect = nil; dstrect: PSDL_Rect = nil);
 
     // 在给定点渲染纹理
+    procedure Render(p: TPoint);
+
     procedure Render
       (
         x, y: integer;
@@ -244,6 +246,7 @@ var
   renderQuad: TSDL_Rect;
   err: Integer;
   errStr: String;
+  scale: TScale;
 begin
   // Set rendering space and render to screen
   renderQuad := Default(TSDL_Rect);
@@ -260,10 +263,20 @@ begin
   end;
 
   err := 0;
+  scale := Self.GetScale;
+
+  err := SDL_RenderSetScale(_Renderer, scale.x, scale.y);
+   if err <> 0 then
+  begin
+    errStr := 'RenderSetScale failure! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+
   err := SDL_RenderCopyEx(_Renderer, _Texture, clip, @renderQuad, angle, center,
     flip);
 
-  if not err.ToBoolean then
+  if err <> 0 then
   begin
     errStr := 'Render failure! SDL Error: %s';
     errStr.Format([SDL_GetError()]);
@@ -275,15 +288,31 @@ procedure TTexture.Render(srcrect: PSDL_Rect; dstrect: PSDL_Rect);
 var
   err: integer;
   errStr: String;
+  scale: TScale;
 begin
-  err := SDL_RenderCopy(_Renderer, _Texture, srcrect, dstrect);
+  err := 0;
+  scale := Self.GetScale;
 
+  err := SDL_RenderSetScale(_Renderer, scale.x, scale.y);
+   if err <> 0 then
+  begin
+    errStr := 'RenderSetScale failure! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+
+   err := SDL_RenderCopy(_Renderer, _Texture, srcrect, dstrect);
   if err <> 0 then
   begin
     errStr := 'Render failure! SDL Error: %s';
     errStr.Format([SDL_GetError()]);
     raise Exception.Create(errStr.ToAnsiString);
   end;
+end;
+
+procedure TTexture.Render(p: TPoint);
+begin
+  Self.Render(p.X, p.Y);
 end;
 
 procedure TTexture.BeginRender;

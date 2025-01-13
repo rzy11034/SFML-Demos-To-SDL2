@@ -23,7 +23,7 @@ procedure Run;
 
 implementation
 
-//uses SDL2_Demos.Basic;
+//uses SDL2_Demos.Circle;
 
 procedure Test;
 
@@ -34,7 +34,7 @@ var
   image, surface: PSDL_Surface;
   event: TSDL_Event;
   tx1, tx2, tx3, tx4, tx5: PSDL_Texture;
-  rc1, rc2, rc3, rc4, r: TRect;
+  rc1, rc2, r: TRect;
   x, y, access: Integer;
   format_: UInt32;
   s, gameIsRunning: Boolean;
@@ -81,9 +81,6 @@ begin
 
 
   rc1 := TRect.Create(0, 0, 640, 480);
-  rc2 := TRect.Create(rc1);
-  rc3 := TRect.Create(rc2);
-  rc4 := TRect.Create(rc3);
 
   x := 0;
   y := 0;
@@ -131,29 +128,33 @@ begin
 
     for i := 0 to 9 do
     begin
-      SDL_SetRenderTarget(renderer, tx5);
-      SDL_SetRenderDrawColor(renderer, $ff, $ff, $ff, $ff);
-      SDL_RenderClear(renderer);
-      //SDL_RenderDrawRect(renderer, @r);
-      //SDL_SetRenderDrawColor(renderer, $ff, $00, $00, $00);
-      //SDL_RenderFillRect(renderer, @r);
-      c := TSDL_Color(TAlphaColors.Red);
-      libSDL2_gfx.rectangleRGBA(renderer, r.Top, r.Left, r.Bottom, r.Right, c.r, c.g, c.b, c.a);
-      r.Offset(10, 10);
-      //libSDL2_gfx.rectangleRGBA(renderer, r.Top, r.Left, r.Bottom, r.Right, c.r, c.g, c.b, c.a);
+      //SDL_SetRenderTarget(renderer, tx1);
+      //begin
+      //  SDL_SetRenderDrawColor(renderer, $ff, $ff, $ff, $ff);
+      //  SDL_RenderClear(renderer);
+      //  //SDL_RenderDrawRect(renderer, @r);
+      //  //SDL_SetRenderDrawColor(renderer, $ff, $00, $00, $00);
+      //  //SDL_RenderFillRect(renderer, @r);
+      //  c := TSDL_Color(TAlphaColors.Red);
+      //  libSDL2_gfx.rectangleRGBA(renderer, r.Top, r.Left, r.Bottom, r.Right, c.r, c.g, c.b, c.a);
+      //  r.Offset(10, 10);
+      //  //libSDL2_gfx.rectangleRGBA(renderer, r.Top, r.Left, r.Bottom, r.Right, c.r, c.g, c.b, c.a);
+      //
+      //
+      //  SDL_SetRenderTarget(renderer, nil);
+      //end;
 
-      SDL_SetRenderTarget(renderer, nil);
 
-      SDL_RenderCopy(renderer, tx5, nil, nil);
-
-      SDL_RenderPresent(renderer);
 
       //SDL_Delay(300);
     end;
 
-      //libSDL2_gfx.boxRGBA(renderer, 200, 200, 400, 400, c.r, c.g, c.b, c.a);
+    c := TSDL_Color(TAlphaColors.Red);
+    SDL_RenderCopy(renderer, tx1, nil, nil);
 
+    SDL_FillRect(surface, r.ToPSDL_Rcct, SDL_MapRGB(surface^.format, c.r, c.g, c.b));
 
+    SDL_RenderPresent(renderer);
   end;
 
   SDL_DestroyTexture(tx1);
