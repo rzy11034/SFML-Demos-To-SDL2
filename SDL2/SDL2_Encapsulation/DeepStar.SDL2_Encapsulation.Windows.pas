@@ -16,8 +16,7 @@ uses
   libSDL2,
   libSDL2_image,
   libSDL2_ttf,
-  DeepStar.Utils,
-  DeepStar.SDL2_Encapsulation.Texture;
+  DeepStar.Utils;
 
 type
   TMessageBoxType = type int32;
@@ -47,6 +46,7 @@ type
     function __CreateRenderer: PSDL_Renderer;
     function __CreateWindow(caption: string; winPosX, winPosY, Width, Height: int32;
       flags: uint32): PSDL_Window;
+
     function __GetCaption: string;
     function __GetClientBounds: TRect;
     function __GetHeight: int32;
@@ -73,8 +73,6 @@ type
     procedure Init(caption: string; width, height: uint32);
     procedure Init(caption: string; winPosX, winPosY, width, height: int32; flags: uint32);
     procedure InitWithOpenGL(caption: string; width, height: uint32);
-
-    procedure Display;
 
     procedure SetRenderDrawColorAndClear(color: PSDL_Color = nil);
 
@@ -122,11 +120,6 @@ begin
   SDL_Quit;
 
   inherited Destroy;
-end;
-
-procedure TWindow.Display;
-begin
-  SDL_RenderPresent(_Renderer);
 end;
 
 function TWindow.GetMousePos: TPoint;

@@ -36,10 +36,21 @@ type
   TArrayUtils_TTexture = specialize TArrayUtils<TTexture>;
 
 type
+  TPointHelper = type Helper for TPoint
+  public
+    function ToSDL_Point: TSDL_Point;
+    function ToPSDL_Point: PSDL_Point;
+  end;
+
   TRectHelper = type Helper for TRect
   public
     function ToSDL_Rect: TSDL_Rect;
-    function ToPSDL_Rcct: PSDL_Rect;
+    function ToPSDL_Rect: PSDL_Rect;
+  end;
+
+  TSDL_PointHelper = type Helper for TSDL_Point
+  public
+    function ToPtr: PSDL_Point;
   end;
 
   TSDL_RectHelper = type helper for TSDL_Rect
@@ -69,6 +80,10 @@ function SDL_Rect(rc: TRect): TSDL_Rect;
 procedure CostomLibarayLoad;
 
 implementation
+
+var
+  static_SDL_Rect: TSDL_Rect;
+  static_SDL_Point: TSDL_Point;
 
 operator := (AColor: TColor): TSDL_Color;
 var
@@ -148,11 +163,25 @@ begin
   SDL_BlitSurface := SDL_UpperBlit;
 end;
 
+{ TPointHelper }
+
+function TPointHelper.ToPSDL_Point: PSDL_Point;
+begin
+  static_SDL_Point := Self.ToSDL_Point;
+  Result := static_SDL_Point.ToPtr;
+end;
+
+function TPointHelper.ToSDL_Point: TSDL_Point;
+begin
+  Result := SDL_Point(Self.X, Self.Y);
+end;
+
 { TRectHelper }
 
-function TRectHelper.ToPSDL_Rcct: PSDL_Rect;
+function TRectHelper.ToPSDL_Rect: PSDL_Rect;
 begin
-  Result := Self.ToSDL_Rect.ToPtr;
+  static_SDL_Rect := SDL_Rect(Self);
+  Result := static_SDL_Rect.ToPtr;
 end;
 
 function TRectHelper.ToSDL_Rect: TSDL_Rect;
@@ -165,11 +194,18 @@ begin
   begin
     x := Self.Left;
     y := Self.Top;
-    w := Self.Width;
-    h := Self.Height;
+    w := Self.Right;
+    h := Self.Bottom;
   end;
 
   Result := res;
+end;
+
+{ TSDL_PointHelper }
+
+function TSDL_PointHelper.ToPtr: PSDL_Point;
+begin
+  Result := @Self;
 end;
 
 { TSDL_RectHelper }

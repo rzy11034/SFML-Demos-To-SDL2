@@ -33,16 +33,13 @@ var
   quit: Boolean;
   c: TSDL_Color;
   tx: TTexture;
+  OriginPoint: TPoint;
 
   procedure __Render__;
   begin
-    tx.BeginRender;
-      SDL_SetRenderDrawColor(win.Renderer, $FF, $FF, $FF, $FF);
-      SDL_RenderFillRect(win.Renderer, tx.BoundsRect.ToSDL_Rect.ToPtr);
-      c := TAlphaColors.Red;
-      aaCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
-      filledCircleRGBA(win.Renderer, 100, 100, 50, c.R, c.G, c.B, c.A);
-    tx.EndRender;
+
+
+    OriginPoint := Point(0, 0);
   end;
 
 begin
@@ -62,8 +59,6 @@ begin
   quit := false;
   while quit = false do
   begin
-    __Render__;
-
     while SDL_PollEvent(@event) <> 0 do
     begin
       if event.type_ = SDL_QUIT_EVENT then
@@ -78,8 +73,11 @@ begin
       end;
     end;
 
-    tx.Render;
-    win.Display;
+    tx.SetTarget;
+
+    tx.UnsetTarget;
+
+    tx.Display;
   end;
 end;
 

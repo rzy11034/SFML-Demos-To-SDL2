@@ -23,7 +23,7 @@ procedure Run;
 
 implementation
 
-//uses SDL2_Demos.Circle;
+uses SDL2_Demos.Circle;
 
 procedure Test;
 
@@ -34,7 +34,7 @@ var
   image, surface: PSDL_Surface;
   event: TSDL_Event;
   tx1, tx2, tx3, tx4, tx5: PSDL_Texture;
-  rc1, rc2, r: TRect;
+  rc1, rc2: TRect;
   x, y, access: Integer;
   format_: UInt32;
   s, gameIsRunning: Boolean;
@@ -42,6 +42,8 @@ var
   renderer: PSDL_Renderer;
   i: integer;
   c: TSDL_Color;
+  sc1: TSDL_Rect;
+  p: PSDL_Rect;
 begin
   SDL_Init(SDL_INIT_VIDEO);
 
@@ -57,7 +59,7 @@ begin
     );
 
   renderer := PSDL_Renderer(nil);
-  renderer := SDL_CreateRenderer(win, -1, SDL_RENDERER_TARGETTEXTURE);
+  renderer := SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
 
   image := PSDL_Surface(nil);
   image := IMG_Load(CrossFixFileName(path).ToPAnsiChar);
@@ -80,8 +82,6 @@ begin
 
 
 
-  rc1 := TRect.Create(0, 0, 640, 480);
-
   x := 0;
   y := 0;
   format_ := uint32(0);
@@ -94,8 +94,6 @@ begin
 
   event := Default(TSDL_Event);
   gameIsRunning := true;
-
-
 
   while gameIsRunning do
   begin
@@ -118,41 +116,29 @@ begin
       end;
     end;
 
-    SDL_SetRenderDrawColor(renderer, $ff, $ff, $ff, $ff);
-    SDL_RenderClear(renderer);
-
-    SDL_RenderCopy(renderer, tx1, nil, nil);
-    //SDL_RenderCopy(renderer, tx2, nil, nil);
-
-    r := Rect(0, 0, 100, 50);
-
-    for i := 0 to 9 do
-    begin
-      //SDL_SetRenderTarget(renderer, tx1);
-      //begin
-      //  SDL_SetRenderDrawColor(renderer, $ff, $ff, $ff, $ff);
-      //  SDL_RenderClear(renderer);
-      //  //SDL_RenderDrawRect(renderer, @r);
-      //  //SDL_SetRenderDrawColor(renderer, $ff, $00, $00, $00);
-      //  //SDL_RenderFillRect(renderer, @r);
-      //  c := TSDL_Color(TAlphaColors.Red);
-      //  libSDL2_gfx.rectangleRGBA(renderer, r.Top, r.Left, r.Bottom, r.Right, c.r, c.g, c.b, c.a);
-      //  r.Offset(10, 10);
-      //  //libSDL2_gfx.rectangleRGBA(renderer, r.Top, r.Left, r.Bottom, r.Right, c.r, c.g, c.b, c.a);
-      //
-      //
-      //  SDL_SetRenderTarget(renderer, nil);
-      //end;
 
 
+    SDL_SetRenderTarget(renderer, tx5);
+      SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+      SDL_RenderClear(renderer);
 
-      //SDL_Delay(300);
-    end;
+      rc1 := TRect.Create(30, 10, 300, 200);
+      sc1 := SDL_Rect(30, 10, 300, 200);
+      p := rc1.ToPSDL_Rect;
 
-    c := TSDL_Color(TAlphaColors.Red);
-    SDL_RenderCopy(renderer, tx1, nil, nil);
+      SDL_RenderCopy(renderer, tx1, nil, nil);
+      //SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+      //SDL_RenderFillRect(renderer, sc1.ToPtr);
 
-    SDL_FillRect(surface, r.ToPSDL_Rcct, SDL_MapRGB(surface^.format, c.r, c.g, c.b));
+      aacircleRGBA(renderer, 100, 100, 50, 0, 0, 255, 255);
+
+      //rc1.Offset(100, 100);
+      //SDL_RenderFillRect(renderer, rc1.ToPSDL_Rect);
+
+    SDL_SetRenderTarget(renderer, nil);
+
+
+    SDL_RenderCopy(renderer, tx5, nil, nil);
 
     SDL_RenderPresent(renderer);
   end;
@@ -172,8 +158,8 @@ end;
 
 procedure Run;
 begin
-  Test;
-  //Main;
+  //Test;
+  Main;
 end;
 
 end.

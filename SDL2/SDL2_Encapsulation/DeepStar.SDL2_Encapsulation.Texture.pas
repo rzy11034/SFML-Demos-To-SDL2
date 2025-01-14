@@ -10,11 +10,11 @@ uses
   Classes,
   SysUtils,
   LazUTF8,
-  System.UITypes,
-  DeepStar.Utils,
   libSDL2,
   libSDL2_image,
-  libSDL2_ttf;
+  libSDL2_ttf,
+  libSDL2_gfx,
+  DeepStar.Utils;
 
 type
   TTexture = Class(TInterfacedObject)
@@ -37,6 +37,7 @@ type
     _Texture: PSDL_Texture;
     _Position: TPoint;
     _Scale: TScale;
+    _Color: TSDL_Color;
 
     function __GetBoundsRect: TRect;
     function __GetData: PSDL_Texture;
@@ -56,6 +57,8 @@ type
     function GetScale: TTexture.TScale;
     function ToPSDL_Texture: PSDL_Texture;
 
+    procedure Display;
+
     // 指定路径图像创建纹理
     procedure LoadFromFile(path: string);
 
@@ -64,24 +67,26 @@ type
       color: TSDL_Color);
 
     // 将当前纹理设置为渲染目标
-    procedure BeginRender;
+    procedure SetTarget;
     // 取消当前纹理设置为渲染目标
-    procedure EndRender;
+    procedure UnsetTarget;
 
     // 渲染纹理
     procedure Render(srcrect: PSDL_Rect = nil; dstrect: PSDL_Rect = nil);
-
     // 在给定点渲染纹理
     procedure Render(p: TPoint);
+    procedure Render(x, y: integer; clip: PSDL_Rect = nil; angle: double = 0;
+      center: PSDL_Point = nil; flip: TSDL_RendererFlags = SDL_FLIP_NONE);
 
-    procedure Render
-      (
-        x, y: integer;
-        clip: PSDL_Rect = nil;
-        angle: double = 0;
-        center: PSDL_Point = nil;
-        flip: TSDL_RendererFlags = SDL_FLIP_NONE
-      );
+    //(*═══════════════════════════════════════════════════════════════════════
+    // 绘图函数
+    procedure SetDrawColor(color: TSDL_Color);
+
+    //TcircleRGBA
+
+
+
+    //═══════════════════════════════════════════════════════════════════════*)
 
     procedure SetPosition(ax, ay: integer);
     procedure SetPosition(ap: TPoint);
@@ -96,12 +101,16 @@ type
 
 implementation
 
+uses
+  DeepStar.SDL2_Encapsulation.Utils;
+
   { TTexture }
 
 constructor TTexture.Create(renderer: PSDL_Renderer);
 begin
   _Renderer := renderer;
   _Scale := TScale.Create;
+  _Color := TSDL_Color(TAlphaColors.White);
 end;
 
 function TTexture.CreateBlank(width, Height: integer): Boolean;
@@ -141,6 +150,11 @@ destructor TTexture.Destroy;
 begin
   __Free;
   inherited Destroy;
+end;
+
+procedure TTexture.Display;
+begin
+  SDL_RenderPresent(_Renderer);
 end;
 
 function TTexture.GetScale: TTexture.TScale;
@@ -294,14 +308,14 @@ begin
   scale := Self.GetScale;
 
   err := SDL_RenderSetScale(_Renderer, scale.x, scale.y);
-   if err <> 0 then
+  if err <> 0 then
   begin
     errStr := 'RenderSetScale failure! SDL Error: %s';
     errStr.Format([SDL_GetError()]);
     raise Exception.Create(errStr.ToAnsiString);
   end;
 
-   err := SDL_RenderCopy(_Renderer, _Texture, srcrect, dstrect);
+  err := SDL_RenderCopy(_Renderer, _Texture, srcrect, dstrect);
   if err <> 0 then
   begin
     errStr := 'Render failure! SDL Error: %s';
@@ -315,7 +329,7 @@ begin
   Self.Render(p.X, p.Y);
 end;
 
-procedure TTexture.BeginRender;
+procedure TTexture.SetTarget;
 begin
   SDL_SetRenderTarget(_Renderer, _Texture);
 end;
@@ -323,6 +337,11 @@ end;
 procedure TTexture.SetColor(color: TColors);
 begin
   SDL_SetTextureColorMod(_Texture, color.R, color.G, color.B);
+end;
+
+procedure TTexture.SetDrawColor(color: TSDL_Color);
+begin
+  _Color := color
 end;
 
 procedure TTexture.SetPosition(ax, ay: integer);
@@ -346,7 +365,7 @@ begin
   Result := _Texture;
 end;
 
-procedure TTexture.EndRender;
+procedure TTexture.UnsetTarget;
 var
   err: Integer;
   errStr: String;

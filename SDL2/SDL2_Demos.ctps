@@ -19,11 +19,9 @@
       <Unit>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="83"/>
-        <CursorPos X="38" Y="86"/>
+        <CursorPos X="22" Y="7"/>
         <UsageCount Value="218"/>
         <Loaded Value="True"/>
       </Unit>
@@ -48,10 +46,11 @@
       <Unit>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="151"/>
-        <CursorPos X="31" Y="163"/>
+        <TopLine Value="322"/>
+        <CursorPos X="18" Y="344"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -69,17 +68,17 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="20"/>
-        <CursorPos X="32" Y="34"/>
+        <TopLine Value="53"/>
+        <CursorPos X="35" Y="63"/>
         <UsageCount Value="200"/>
       </Unit>
       <Unit>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="175"/>
-        <CursorPos X="3" Y="194"/>
+        <TopLine Value="267"/>
+        <CursorPos X="23" Y="160"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -88,8 +87,8 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="29"/>
-        <CursorPos X="15" Y="45"/>
+        <TopLine Value="43"/>
+        <CursorPos X="29" Y="79"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -107,11 +106,12 @@
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_SDL\source\libsdl2_gfx.pas"/>
         <FRMtype Value="0"/>
         <UnitName Value="libSDL2_gfx"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="101"/>
-        <CursorPos X="5" Y="118"/>
-        <UsageCount Value="26"/>
+        <TopLine Value="76"/>
+        <CursorPos X="15" Y="112"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\win64\system.pp"/>
@@ -271,86 +271,126 @@
         <UsageCount Value="9"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="19">
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
-        <Caret Line="85" Column="28" TopLine="65"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\SDL2_Demos.Main.pas"/>
-        <Caret Line="37" Column="11" TopLine="17"/>
+        <Caret Line="128" TopLine="118"/>
       </Position>
       <Position>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
-        <Caret Line="79" Column="29" TopLine="19"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="249" TopLine="239"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="250" TopLine="239"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="251" TopLine="239"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="252" TopLine="239"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="253" TopLine="239"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="256" TopLine="240"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="262" TopLine="253"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="263" TopLine="253"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="264" TopLine="253"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="263" TopLine="253"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="266" Column="14" TopLine="253"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="248" Column="3" TopLine="232"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="75" Column="31" TopLine="51"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="283" Column="21" TopLine="256"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
-        <Caret Line="273" Column="8" TopLine="248"/>
+        <Caret Line="125" TopLine="116"/>
       </Position>
       <Position>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
-        <Caret Line="26" Column="23" TopLine="18"/>
+        <Caret Line="126" TopLine="116"/>
       </Position>
       <Position>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
-        <Caret Line="132" Column="11" TopLine="115"/>
+        <Caret Line="127" TopLine="116"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="130" TopLine="116"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="131" TopLine="116"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="127" TopLine="116"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="134" Column="48" TopLine="116"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="26" TopLine="13"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="71" Column="11" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="141" Column="19"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
+        <Caret Line="80" Column="6" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <Caret Line="84" Column="21" TopLine="54"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="47" Column="24" TopLine="19"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="355" Column="3" TopLine="346"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="75" Column="25" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="165" Column="3" TopLine="162"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="47" Column="24" TopLine="42"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="359" Column="83" TopLine="348"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="47" Column="14" TopLine="41"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="356" Column="3" TopLine="348"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="75" Column="26" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="165" Column="3" TopLine="162"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="75" Column="15" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <Caret Line="18" Column="14"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <Caret Line="41" Column="16" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <Caret Line="52" Column="27" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <Caret Line="51" Column="21" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <Caret Line="52" Column="21" TopLine="44"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Texture.pas"/>
+        <Caret Line="83" Column="26" TopLine="63"/>
       </Position>
     </JumpHistory>
     <RunParams>
