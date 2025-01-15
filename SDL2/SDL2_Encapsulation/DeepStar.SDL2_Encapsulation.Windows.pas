@@ -71,6 +71,7 @@ type
     procedure Init(caption: string; width, height: uint32);
     procedure Init(caption: string; winPosX, winPosY, width, height: int32; flags: uint32);
     procedure InitWithOpenGL(caption: string; width, height: uint32);
+    procedure Display;
 
     property Renderer: PSDL_Renderer read __GetRenderer;
     property Width: int32 read __GetWidth;
@@ -113,6 +114,11 @@ begin
   SDL_Quit;
 
   inherited Destroy;
+end;
+
+procedure TWindow.Display;
+begin
+  SDL_RenderPresent(_Renderer);
 end;
 
 function TWindow.GetMousePos: TPoint;

@@ -101,6 +101,10 @@
         <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

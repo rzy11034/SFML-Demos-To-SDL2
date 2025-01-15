@@ -22,19 +22,18 @@
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="13"/>
-        <CursorPos X="22" Y="26"/>
+        <CursorPos X="27" Y="26"/>
         <UsageCount Value="218"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="7"/>
-        <CursorPos X="37" Y="33"/>
+        <TopLine Value="38"/>
+        <CursorPos X="21" Y="69"/>
         <UsageCount Value="217"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Caleidos\SDL2_Demos.Caleidos.pas"/>
@@ -50,8 +49,8 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="417"/>
-        <CursorPos X="40" Y="428"/>
+        <TopLine Value="177"/>
+        <CursorPos X="40" Y="191"/>
         <UsageCount Value="200"/>
       </Unit>
       <Unit>
@@ -75,11 +74,13 @@
       <Unit>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="4"/>
-        <CursorPos X="49" Y="13"/>
+        <TopLine Value="129"/>
+        <CursorPos X="3" Y="153"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
@@ -88,6 +89,15 @@
         <WindowIndex Value="0"/>
         <CursorPos X="39" Y="9"/>
         <UsageCount Value="200"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <CursorPos X="37" Y="14"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_SDL\source\libsdl2.pas"/>
@@ -267,18 +277,35 @@
         <UsageCount Value="8"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="8"/>
-        <CursorPos X="5" Y="35"/>
-        <UsageCount Value="20"/>
+        <CursorPos X="34" Y="11"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\packages\sdl\src\sdl_mixer.pas"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="749"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_SDL\source\libsdl2_mixer.pas"/>
+        <FRMtype Value="0"/>
+        <UnitName Value="libSDL2_mixer"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="121"/>
+        <CursorPos X="12" Y="97"/>
+        <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="5">
+    <JumpHistory HistoryIndex="23">
       <Position>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
         <Caret Line="17" Column="7" TopLine="13"/>
@@ -288,20 +315,92 @@
         <Caret Line="26" Column="22" TopLine="13"/>
       </Position>
       <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="67" Column="43" TopLine="38"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Basic\SDL2_Demos.Basic.pas"/>
-        <Caret Line="29" Column="34" TopLine="7"/>
-      </Position>
-      <Position>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
         <Caret Line="26" Column="22" TopLine="13"/>
       </Position>
       <Position>
         <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
         <Caret Line="28" Column="6" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="38" Column="10" TopLine="17"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="43" Column="7" TopLine="17"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="66" Column="13" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="69" Column="9" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="44" Column="73" TopLine="19"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="41" Column="59" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="26" Column="27" TopLine="13"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="79" Column="3" TopLine="49"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="80" Column="21" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
+        <Caret Line="11" Column="34"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="14" Column="37"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="55" Column="23" TopLine="28"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="264" Column="8" TopLine="115"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="54" Column="24" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="303" Column="3" TopLine="288"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="55" Column="23" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="260" Column="27" TopLine="254"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="56" Column="22" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="291" Column="3" TopLine="285"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Windows.pas"/>
+        <Caret Line="71" Column="18" TopLine="40"/>
       </Position>
     </JumpHistory>
     <RunParams>

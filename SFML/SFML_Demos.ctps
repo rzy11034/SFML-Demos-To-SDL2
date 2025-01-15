@@ -18,21 +18,21 @@
       <Unit>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="4"/>
-        <CursorPos X="20" Y="20"/>
+        <CursorPos X="24" Y="18"/>
         <UsageCount Value="68"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.HelloWorld.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="77"/>
-        <CursorPos X="58" Y="71"/>
+        <TopLine Value="78"/>
+        <CursorPos X="14" Y="81"/>
         <UsageCount Value="68"/>
         <Loaded Value="True"/>
       </Unit>
