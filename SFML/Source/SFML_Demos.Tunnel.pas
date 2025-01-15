@@ -134,6 +134,9 @@ begin
     ''#10 +
     '    gl_FragColor = vec4( finalColor, 1.0 );'#10 +
     '}';
+
+  WriteLn(FragmentShader);
+
   ShaderHandle := sfShader_createFromMemory(nil, nil, FragmentShader);
   States.Shader := ShaderHandle;
 

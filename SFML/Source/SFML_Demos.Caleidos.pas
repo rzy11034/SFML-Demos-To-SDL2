@@ -110,6 +110,8 @@ begin
     '	gl_FragColor = vec4(hsv(noise(vec2(ai, di) * 0.01), 1.0, v), 1.0);'#10 +
     '}';
 
+  WriteLn(FragmentShader);
+
   ShaderHandle := sfShader_createFromMemory(nil, nil, FragmentShader);
   States.Shader := ShaderHandle;
 

@@ -26,8 +26,6 @@ const
   MESSAGEBOX_WARNING = libSDL2.SDL_MESSAGEBOX_WARNING;
   MESSAGEBOX_INFORMATION = libSDL2.SDL_MESSAGEBOX_INFORMATION;
 
-  SDL_COLOR_WHITE: TSDL_Color = (r: $FF; g: $FF; b: $FF; a: $FF);
-
 type
   TWindow = class(TInterfacedObject)
   private
@@ -74,8 +72,6 @@ type
     procedure Init(caption: string; winPosX, winPosY, width, height: int32; flags: uint32);
     procedure InitWithOpenGL(caption: string; width, height: uint32);
 
-    procedure SetRenderDrawColorAndClear(color: PSDL_Color = nil);
-
     property Renderer: PSDL_Renderer read __GetRenderer;
     property Width: int32 read __GetWidth;
     property Height: int32 read __GetHeight;
@@ -84,9 +80,6 @@ type
   end;
 
 implementation
-
-uses
-  DeepStar.SDL2_Encapsulation.Utils;
 
   { TWindow }
 
@@ -157,7 +150,7 @@ begin
     SDL_WINDOWPOS_UNDEFINED,
     width,
     height,
-    SDL_WINDOW_SHOWN);
+    SDL_WINDOW_RESIZABLE);
 end;
 
 procedure TWindow.InitWithOpenGL(caption: string; width, height: uint32);
@@ -178,23 +171,6 @@ begin
     SDL_WINDOW_RESIZABLE or SDL_WINDOW_OPENGL);
 
   _Context := SDL_GL_CreateContext(_Window);
-end;
-
-procedure TWindow.SetRenderDrawColorAndClear(color: PSDL_Color);
-var
-  temp: TSDL_Color;
-begin
-  temp := TSDL_Color(TAlphaColors.White);
-  if color <> nil then
-  begin
-    temp.a := color^.a;
-    temp.r := color^.r;
-    temp.g := color^.g;
-    temp.b := color^.b;
-  end;
-
-  SDL_SetRenderDrawColor(_Renderer, temp.r, temp.g, temp.b, temp.a);
-  SDL_RenderClear(_Renderer);
 end;
 
 function TWindow.ShowMessageBox(flag: TMessageBoxType; title, message: string): int32;

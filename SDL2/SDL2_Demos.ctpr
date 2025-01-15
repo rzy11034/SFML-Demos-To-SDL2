@@ -25,7 +25,7 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Basic;Source\Utils;Source\Caleidos;SDL2_Encapsulation;Source\Circle"/>
+            <OtherUnitFiles Value="Source;Source\Basic;Source\Utils;Source\Caleidos;SDL2_Encapsulation;Source\Circle;Source\HelloWorld"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
@@ -97,6 +97,10 @@
         <Filename Value="Source\Circle\SDL2_Demos.Circle.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -107,7 +111,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Source;Source\Basic;Source\Utils;Source\Caleidos;SDL2_Encapsulation;Source\Circle"/>
+      <OtherUnitFiles Value="Source;Source\Basic;Source\Utils;Source\Caleidos;SDL2_Encapsulation;Source\Circle;Source\HelloWorld"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>

@@ -3,7 +3,7 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="12"/>
-    <BuildModes Active="Debug"/>
+    <BuildModes Active="Release"/>
     <Units>
       <Unit>
         <Filename Value="SFML_Demos.ppr"/>
@@ -12,27 +12,29 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <CursorPos X="12" Y="11"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="68"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <CursorPos X="24" Y="22"/>
-        <UsageCount Value="67"/>
+        <TopLine Value="4"/>
+        <CursorPos X="20" Y="20"/>
+        <UsageCount Value="68"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.HelloWorld.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="32"/>
-        <CursorPos Y="44"/>
-        <UsageCount Value="67"/>
+        <TopLine Value="77"/>
+        <CursorPos X="58" Y="71"/>
+        <UsageCount Value="68"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="SFML_Binding\CSFMLAudio.pas"/>
@@ -41,14 +43,14 @@
         <WindowIndex Value="0"/>
         <TopLine Value="25"/>
         <CursorPos X="32" Y="38"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="SFML_Binding\CSFMLConfig.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="SFML_Binding\CSFMLGraphics.pas"/>
@@ -57,21 +59,21 @@
         <WindowIndex Value="0"/>
         <TopLine Value="27"/>
         <CursorPos X="3" Y="47"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="SFML_Binding\CSFMLNetwork.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="SFML_Binding\CSFMLSystem.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="SFML_Binding\CSFMLWindow.pas"/>
@@ -79,7 +81,7 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="43"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Basic.pas"/>
@@ -88,16 +90,16 @@
         <WindowIndex Value="0"/>
         <TopLine Value="10"/>
         <CursorPos X="17" Y="88"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Caleidos.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="13"/>
-        <CursorPos X="99" Y="150"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="9"/>
+        <CursorPos X="27" Y="113"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Circle.pas"/>
@@ -106,24 +108,25 @@
         <WindowIndex Value="0"/>
         <TopLine Value="13"/>
         <CursorPos X="55" Y="30"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Circles.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="91"/>
-        <UsageCount Value="36"/>
+        <TopLine Value="19"/>
+        <CursorPos X="11" Y="21"/>
+        <UsageCount Value="37"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Colorful.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="29"/>
-        <CursorPos X="35" Y="33"/>
-        <UsageCount Value="35"/>
+        <TopLine Value="80"/>
+        <CursorPos X="32" Y="89"/>
+        <UsageCount Value="36"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.OpenGL.pas"/>
@@ -132,16 +135,15 @@
         <WindowIndex Value="0"/>
         <TopLine Value="199"/>
         <CursorPos X="39" Y="207"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="28"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Dark.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="70"/>
-        <CursorPos Y="4"/>
-        <UsageCount Value="24"/>
+        <TopLine Value="43"/>
+        <UsageCount Value="25"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Fire.pas"/>
@@ -150,7 +152,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="58"/>
         <CursorPos X="16" Y="60"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="24"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Ftp.pas"/>
@@ -159,7 +161,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="157"/>
         <CursorPos X="32" Y="165"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="24"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Lights.pas"/>
@@ -167,7 +169,7 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <CursorPos X="11" Y="18"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="24"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Plasma.pas"/>
@@ -175,7 +177,7 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <CursorPos X="11" Y="18"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="24"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Pong.pas"/>
@@ -183,25 +185,25 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <CursorPos X="38" Y="18"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="24"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Shader.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="13"/>
+        <TopLine Value="170"/>
         <CursorPos X="24" Y="14"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="24"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Sky.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="66"/>
-        <CursorPos X="128" Y="74"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="79"/>
+        <CursorPos X="38" Y="59"/>
+        <UsageCount Value="23"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Sockets.pas"/>
@@ -210,33 +212,34 @@
         <WindowIndex Value="0"/>
         <TopLine Value="2"/>
         <CursorPos X="47" Y="6"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Sound.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="11"/>
-        <CursorPos X="14" Y="11"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="16"/>
+        <CursorPos X="29" Y="26"/>
+        <UsageCount Value="23"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.SoundCapture.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="29"/>
-        <CursorPos X="35" Y="29"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="16"/>
+        <CursorPos X="21" Y="11"/>
+        <UsageCount Value="23"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Tunnel.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <CursorPos X="20" Y="6"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="122"/>
+        <CursorPos X="27" Y="138"/>
+        <UsageCount Value="23"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Voip.pas"/>
@@ -244,24 +247,25 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <CursorPos X="13" Y="275"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Win.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <CursorPos X="3" Y="9"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="68"/>
+        <CursorPos X="2" Y="83"/>
+        <UsageCount Value="23"/>
       </Unit>
       <Unit>
         <Filename Value="Source\SFML_Demos.Window.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="102"/>
+        <TopLine Value="131"/>
         <CursorPos X="57" Y="88"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="22"/>
       </Unit>
       <Unit>
         <Filename Value="..\DeepStar-Lib\SFML_Binding\Source\CSFMLAudio.pas"/>
@@ -788,7 +792,7 @@
         <UsageCount Value="10"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="17">
+    <JumpHistory HistoryIndex="22">
       <Position>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
         <Caret Line="18" Column="20" TopLine="7"/>
@@ -860,6 +864,26 @@
       <Position>
         <Filename Value="Source\SFML_Demos.Main.pas"/>
         <Caret Line="15" Column="27"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="18" Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="20" Column="21"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="18" Column="19" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="17" Column="35" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\SFML_Demos.Main.pas"/>
+        <Caret Line="18" Column="20" TopLine="4"/>
       </Position>
     </JumpHistory>
     <RunParams>

@@ -18,10 +18,6 @@ uses
 
 type
   TTexture = Class(TInterfacedObject)
-  private type
-    float = single;
-    TColors = System.UITypes.TAlphaColorRec;
-
   public type
     TScale = record
     public
@@ -44,6 +40,8 @@ type
     function __GetHeight: integer;
     function __GetPosition: TPoint;
     function __GetWidth: integer;
+
+    procedure __GetRGBA(color: TSDL_Color; out r, g, b, a: Byte);
 
     procedure __Free;
 
@@ -80,7 +78,17 @@ type
 
     //(*═══════════════════════════════════════════════════════════════════════
     // 绘图函数
+
+    procedure Clear;
+
+    procedure SetDrawColor;
     procedure SetDrawColor(color: TSDL_Color);
+    procedure SetDrawColor(r, g, b, a: Byte);
+
+
+    procedure DrawCircle(x, y, rad: integer);
+    procedure DrawCircleA(x, y, rad: integer);
+    procedure DrawCircleAndFilled(x, y, rad: integer);
 
     //TcircleRGBA
 
@@ -90,7 +98,7 @@ type
 
     procedure SetPosition(ax, ay: integer);
     procedure SetPosition(ap: TPoint);
-    procedure SetColor(color: TColors);
+    procedure SetColorMod(color: TSDL_Color);
     procedure SetScale(x, y: float);
 
     property Width: integer read __GetWidth;
@@ -111,6 +119,20 @@ begin
   _Renderer := renderer;
   _Scale := TScale.Create;
   _Color := TSDL_Color(TAlphaColors.White);
+end;
+
+procedure TTexture.Clear;
+var
+  err: integer;
+  errStr: String;
+begin
+  err := SDL_RenderClear(_Renderer);
+  if err <> 0 then
+  begin
+    errStr := 'Failed to call the SDL_RenderClear()! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
 end;
 
 function TTexture.CreateBlank(width, Height: integer): Boolean;
@@ -155,6 +177,60 @@ end;
 procedure TTexture.Display;
 begin
   SDL_RenderPresent(_Renderer);
+end;
+
+procedure TTexture.DrawCircle(x, y, rad: integer);
+var
+  r, g, b, a: Byte;
+  err: Integer;
+  errStr: String;
+begin
+  __GetRGBA(_Color, r, g, b, a);
+
+  err := 0;
+  err := circleRGBA(_Renderer, x, y, rad, r, g, b, a);
+  if err <> 0 then
+  begin
+    errStr := 'Failed to call the DrawCircle()! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
+
+procedure TTexture.DrawCircleA(x, y, rad: integer);
+var
+  r, g, b, a: Byte;
+  err: Integer;
+  errStr: String;
+begin
+  __GetRGBA(_Color, r, g, b, a);
+
+  err := 0;
+  err := aacircleRGBA(_Renderer, x, y, rad, r, g, b, a);
+  if err <> 0 then
+  begin
+    errStr := 'Failed to call the DrawCircleA()! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
+
+procedure TTexture.DrawCircleAndFilled(x, y, rad: integer);
+var
+  r, g, b, a: Byte;
+  err: Integer;
+  errStr: String;
+begin
+  __GetRGBA(_Color, r, g, b, a);
+
+  err := 0;
+  err := filledCircleRGBA(_Renderer, x, y, rad, r, g, b, a);
+  if err <> 0 then
+  begin
+    errStr := 'Failed to call the DrawCircleAndFilled()! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
 end;
 
 function TTexture.GetScale: TTexture.TScale;
@@ -334,14 +410,63 @@ begin
   SDL_SetRenderTarget(_Renderer, _Texture);
 end;
 
-procedure TTexture.SetColor(color: TColors);
+procedure TTexture.SetColorMod(color: TSDL_Color);
+var
+  r, g, b, a: Byte;
+  err: integer;
+  errStr: String;
 begin
-  SDL_SetTextureColorMod(_Texture, color.R, color.G, color.B);
+  __GetRGBA(color, r, g, b, a);
+
+  err := SDL_SetTextureColorMod(_Texture, color.R, color.G, color.B);
+  if err <> 0 then
+  begin
+    errStr := 'Failed to call SetColorMod()! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
+
+procedure TTexture.SetDrawColor(r, g, b, a: Byte);
+var
+  err: integer;
+  errStr: String;
+begin
+  _Color.r := r;
+  _Color.g := g;
+  _Color.b := b;
+  _Color.a := a;
+
+  err := SDL_SetRenderDrawColor(_Renderer, r, g, b, a);
+  if err <> 0 then
+  begin
+    errStr := 'Failed to call the SetDrawColor()! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
 end;
 
 procedure TTexture.SetDrawColor(color: TSDL_Color);
+var
+  a, r, g, b: Byte;
+  err: integer;
+  errStr: String;
 begin
-  _Color := color
+  _Color := color;
+  __GetRGBA(color, r, g, b, a);
+
+  err := SDL_SetRenderDrawColor(_Renderer, r, g, b, a);
+  if err <> 0 then
+  begin
+    errStr := 'Failed to call the SetDrawColor()! SDL Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
+
+procedure TTexture.SetDrawColor;
+begin
+  _Color := TSDL_Color(TAlphaColors.White);
 end;
 
 procedure TTexture.SetPosition(ax, ay: integer);
@@ -415,6 +540,14 @@ end;
 function TTexture.__GetPosition: TPoint;
 begin
   Result := _Position;
+end;
+
+procedure TTexture.__GetRGBA(color: TSDL_Color; out r, g, b, a: Byte);
+begin
+  r := color.r;
+  g := color.g;
+  b := color.b;
+  a := color.a;
 end;
 
 function TTexture.__GetWidth: integer;

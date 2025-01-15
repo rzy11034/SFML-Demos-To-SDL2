@@ -8,10 +8,7 @@ interface
 uses
   Classes,
   SysUtils,
-  GL,
   libSDL2,
-  libSDL2_image,
-  libSDL2_gfx,
   DeepStar.SDL2_Encapsulation.Utils,
   DeepStar.SDL2_Encapsulation.Windows,
   DeepStar.SDL2_Encapsulation.Texture;
@@ -31,17 +28,7 @@ var
   title: String;
   event: TSDL_Event;
   quit: Boolean;
-  c: TSDL_Color;
   tx: TTexture;
-  OriginPoint: TPoint;
-
-  procedure __Render__;
-  begin
-
-
-    OriginPoint := Point(0, 0);
-  end;
-
 begin
   title := '';
   title := 'SDL2 Circle - ' + lowerCase({$I %FPCTargetCPU%}) + '-'
@@ -49,7 +36,7 @@ begin
 
   win_managed := IInterface(TWindow.Create);
   win := win_managed as TWindow;
-  win.InitWithOpenGL(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
+  win.Init(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
 
   tx_managed := IInterface(TTexture.Create(win.Renderer));
   tx := tx_managed as TTexture;
@@ -74,9 +61,17 @@ begin
     end;
 
     tx.SetTarget;
+      tx.SetDrawColor(TSDL_Color(TAlphaColors.Red));
+      tx.Clear;
 
+      tx.SetDrawColor(TSDL_Color(TAlphaColors.White));
+      tx.DrawCircleAndFilled(0, 0, RADIUS * 2);
+
+      tx.SetDrawColor(TSDL_Color(TColors.LimeGreen));
+      tx.DrawCircleAndFilled(0, 0, RADIUS);
     tx.UnsetTarget;
 
+    tx.Render;
     tx.Display;
   end;
 end;

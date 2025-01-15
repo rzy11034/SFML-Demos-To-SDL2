@@ -10,8 +10,7 @@ uses
   SysUtils,
   libSDL2,
   DeepStar.Utils,
-  DeepStar.SDL2_Encapsulation.Windows,
-  DeepStar.SDL2_Encapsulation.Utils;
+  DeepStar.SDL2_Encapsulation.Windows;
 
 var
   FragmentShader, title: string;
@@ -55,7 +54,7 @@ begin
     //window.SetRenderDrawColorAndClear(TColors.Black);
     //window.Draw(txText);
 
-    window.Display;
+
   end;
 
   window.Free;

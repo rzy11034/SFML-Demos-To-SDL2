@@ -81,6 +81,9 @@ begin
     'vec3 	col =vec3(0.2,0.4,0.5) + vec3(q*vec3(0.2,0.4,0.1));'#10 +
     '	gl_FragColor = vec4( f2(col), 1.0 );'#10 +
     '}';
+
+  WriteLn(FragmentShader);
+
   ShaderHandle := sfShader_createFromMemory(nil, nil, FragmentShader);
   States.Shader := ShaderHandle;
 

@@ -8,7 +8,6 @@ interface
 uses
   Classes,
   SysUtils,
-  GL,
   libSDL2,
   DeepStar.SDL2_Encapsulation.Windows,
   DeepStar.SDL2_Encapsulation.Texture,
@@ -27,18 +26,18 @@ var
   win: TWindow;
   texture: TTexture;
   event: TSDL_Event;
-  window_managed, txText_managed:IInterface;
+  window_managed, texture_managed:IInterface;
   quit: Boolean;
-  color: PSDL_Color;
 begin
-  title := 'SDL2 Basic win - ' + lowerCase({$I %FPCTargetCPU%}) + '-' + lowerCase({$I %FPCTargetOS%});
+  title := 'SDL2 Basic win - ' + lowerCase({$I %FPCTargetCPU%}) + '-'
+    + lowerCase({$I %FPCTargetOS%});
 
   window_managed := IInterface(TWindow.Create);
   win := window_managed as TWindow;
-  win.InitWithOpenGL(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
+  win.Init(Title, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-  txText_managed := IInterface(TTexture.Create(win.Renderer));
-  texture := txText_managed as TTexture;
+  texture_managed := IInterface(TTexture.Create(win.Renderer));
+  texture := texture_managed as TTexture;
   texture.LoadFormString('../Resources/admirationpains.ttf', 80, 'Basic win',
     TColors.White);
   texture.SetPosition(180, 250);
@@ -64,11 +63,10 @@ begin
         texture.SetScale(win.Width / SCREEN_WIDTH, win.Height / SCREEN_HEIGHT);
     end;
 
-    color := TSDL_Color(TAlphaColors.Blue).ToPtr;
-    win.SetRenderDrawColorAndClear(color);
+    texture.SetDrawColor(TSDL_Color(TAlphaColors.Blue));
+    texture.Clear;
     texture.Render(texture.Position);
-
-    win.Display;
+    texture.Display;
   end;
 end;
 
