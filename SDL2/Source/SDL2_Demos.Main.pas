@@ -27,21 +27,14 @@ uses DeepStar.SDL2_Encapsulation.Mixer;
 
 procedure Test;
 var
-  t1_managed, t2_managed: IInterface;
-  t1, t2: TMusic;
-  _is: Boolean;
+  t1: TMusic;
+  t2: TChunk;
 begin
-  t1_managed := IInterface(TMusic.Create);
-  t1 := t1_managed as TMusic;
+  t1 := TMusic.Create;
+  t2 := TChunk.Create;
 
-  _is := t1._IsAudioOpened;
-  t1._IsAudioOpened := not t1._IsAudioOpened;
-
-  t2_managed := IInterface(TMusic.Create);
-  t2 := t2_managed as TMusic;
-
-  _is := t1._IsAudioOpened;
-
+  t1.Free;
+  t2.Free;
 
   Exit;
 end;
