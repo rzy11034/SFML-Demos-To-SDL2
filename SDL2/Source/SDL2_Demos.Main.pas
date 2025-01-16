@@ -23,17 +23,33 @@ procedure Run;
 
 implementation
 
-uses SDL2_Demos.HelloWorld;
+uses DeepStar.SDL2_Encapsulation.Mixer;
 
 procedure Test;
+var
+  t1_managed, t2_managed: IInterface;
+  t1, t2: TMusic;
+  _is: Boolean;
 begin
+  t1_managed := IInterface(TMusic.Create);
+  t1 := t1_managed as TMusic;
+
+  _is := t1._IsAudioOpened;
+  t1._IsAudioOpened := not t1._IsAudioOpened;
+
+  t2_managed := IInterface(TMusic.Create);
+  t2 := t2_managed as TMusic;
+
+  _is := t1._IsAudioOpened;
+
+
   Exit;
 end;
 
 procedure Run;
 begin
-  //Test;
-  Main;
+  Test;
+  //Main;
 end;
 
 end.
