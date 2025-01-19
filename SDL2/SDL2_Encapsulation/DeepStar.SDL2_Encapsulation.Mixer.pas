@@ -14,13 +14,16 @@ uses
 
 type
   TMixerBase = class(TInterfacedObject)
-  protected
-    _IsAudioOpened: Boolean; static;
+  protected class var
+    _IsAudioOpened: boolean;
+    _MixerRefCount: integer;
+
   public
-    constructor Create;
+    constructor Create; virtual;
     destructor Destroy; override;
 
     procedure LoadFromFile(fileName: string); virtual; abstract;
+    procedure Play; virtual; abstract;
   end;
 
   TMusic = class(TMixerBase)
@@ -28,11 +31,11 @@ type
     _Music: PMix_Music;
 
   public
-    constructor Create;
+    constructor Create; override;
     destructor Destroy; override;
 
     procedure LoadFromFile(fileName: string); override;
-    procedure Play;
+    procedure Play; override;
   end;
 
   TChunk = class(TMixerBase)
@@ -40,11 +43,11 @@ type
     _Chunk: PMix_Chunk;
 
   public
-    constructor Create;
+    constructor Create; override;
     destructor Destroy; override;
 
     procedure LoadFromFile(fileName: string); override;
-    procedure Play;
+    procedure Play; override;
   end;
 
 implementation
@@ -54,20 +57,23 @@ implementation
 constructor TMixerBase.Create;
 begin
   if not _IsAudioOpened then
-  begin
     if Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0 then
       raise Exception.Create('SDL_mixer could not initialize! SDL_mixer Error');
-  end;
+
 
   _IsAudioOpened := true;
+
+  _MixerRefCount += 1;
 end;
 
 destructor TMixerBase.Destroy;
 begin
-  if _IsAudioOpened then
+  _MixerRefCount -= 1;
+
+  if _IsAudioOpened and (_MixerRefCount <= 0) then
   begin
-    _IsAudioOpened := false;
     Mix_CloseAudio;
+    _IsAudioOpened := false;
   end;
 
   inherited Destroy;
@@ -78,7 +84,6 @@ end;
 constructor TMusic.Create;
 begin
   inherited Create;
-
   _Music := PMix_Music(nil);
 end;
 
@@ -115,17 +120,26 @@ end;
 constructor TChunk.Create;
 begin
   inherited Create;
+  _Chunk := PMix_Chunk(nil);
 end;
 
 destructor TChunk.Destroy;
 begin
+  if _Chunk <> nil then
+  begin
+    Mix_FreeChunk(_Chunk);
+    _Chunk := nil;
+  end;
+
   inherited Destroy;
 end;
 
 procedure TChunk.LoadFromFile(fileName: string);
+var
+  errStr: String;
 begin
   _Chunk := Mix_LoadWAV(CrossFixFileName(fileName).ToPAnsiChar);
-  if _Music = nil then
+  if _Chunk = nil then
   begin
     errStr := string('Failed to load ' + fileName);
     raise Exception.Create(errStr.ToAnsiString);
@@ -134,7 +148,7 @@ end;
 
 procedure TChunk.Play;
 begin
-
+  Mix_PlayChannel(-1, _Chunk, 0);
 end;
 
 end.

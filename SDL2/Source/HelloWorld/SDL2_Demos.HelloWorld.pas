@@ -11,7 +11,8 @@ uses
   libSDL2,
   DeepStar.SDL2_Encapsulation.Windows,
   DeepStar.SDL2_Encapsulation.Texture,
-  DeepStar.SDL2_Encapsulation.Utils;
+  DeepStar.SDL2_Encapsulation.Utils,
+  DeepStar.SDL2_Encapsulation.Mixer;
 
 procedure Main;
 
@@ -22,13 +23,14 @@ const
   SCREEN_WIDTH = 800;
   SCREEN_HEIGHT = 600;
 var
-  win_managed, texture_managed, font_managed: IInterface;
+  win_managed, texture_managed, font_managed, music_managed: IInterface;
   win: TWindow;
   title: String;
   texture, font: TTexture;
   scaleX, scaleY: float;
   quit: Boolean;
   event: TSDL_Event;
+  music: TMusic;
 begin
   title := '';
   title := 'SDL2 Window - ' + lowerCase({$I %FPCTargetCPU%}) + '-'
@@ -40,13 +42,18 @@ begin
 
   texture_managed := IInterface(TTexture.Create(win.Renderer));
   texture := texture_managed as TTexture;
-  texture.LoadFromFile('../resources/oncapintada.jpg');
+  texture.LoadFromFile('../Resources/oncapintada.jpg');
 
   font_managed := IInterface(TTexture.Create(win.Renderer));
   font := font_managed as TTexture;
-  font.LoadFormString('../resources/admirationpains.ttf', 50, 'Hello World',
+  font.LoadFormString('../Resources/admirationpains.ttf', 50, 'Hello World',
     TSDL_Color(TColors.Black));
   font.SetPosition(300, 5);
+
+  music_managed := IInterface(TMusic.Create);
+  music := music_managed as TMusic;
+  music.LoadFromFile('../Resources/oncapintada.ogg');
+  music.Play;
 
   quit := false;
   event := Default(TSDL_Event);

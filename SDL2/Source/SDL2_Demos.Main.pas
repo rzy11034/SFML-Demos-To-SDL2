@@ -23,26 +23,17 @@ procedure Run;
 
 implementation
 
-uses DeepStar.SDL2_Encapsulation.Mixer;
+uses SDL2_Demos.HelloWorld;
 
 procedure Test;
-var
-  t1: TMusic;
-  t2: TChunk;
 begin
-  t1 := TMusic.Create;
-  t2 := TChunk.Create;
-
-  t1.Free;
-  t2.Free;
-
   Exit;
 end;
 
 procedure Run;
 begin
   Test;
-  //Main;
+  Main;
 end;
 
 end.

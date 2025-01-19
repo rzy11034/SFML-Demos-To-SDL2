@@ -21,8 +21,8 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="31"/>
-        <CursorPos Y="36"/>
+        <TopLine Value="11"/>
+        <CursorPos X="59" Y="24"/>
         <UsageCount Value="218"/>
         <Loaded Value="True"/>
       </Unit>
@@ -91,21 +91,22 @@
       <Unit>
         <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <CursorPos X="37" Y="14"/>
-        <UsageCount Value="25"/>
+        <TopLine Value="50"/>
+        <CursorPos X="43" Y="70"/>
+        <UsageCount Value="61"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="109"/>
-        <CursorPos X="7" Y="127"/>
-        <UsageCount Value="24"/>
+        <TopLine Value="37"/>
+        <CursorPos X="22" Y="48"/>
+        <UsageCount Value="60"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -116,7 +117,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1696"/>
         <CursorPos X="4" Y="1716"/>
-        <UsageCount Value="93"/>
+        <UsageCount Value="89"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_SDL\source\libsdl2_gfx.pas"/>
@@ -126,7 +127,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="79"/>
         <CursorPos X="70" Y="112"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="26"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\win64\system.pp"/>
@@ -134,9 +135,9 @@
         <UnitName Value="System"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="239"/>
-        <CursorPos X="23" Y="258"/>
-        <UsageCount Value="19"/>
+        <TopLine Value="463"/>
+        <CursorPos X="10" Y="463"/>
+        <UsageCount Value="15"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_SDL\source\libsdl2_image.pas"/>
@@ -146,7 +147,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="67"/>
         <CursorPos X="51" Y="79"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="28"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\SDL2-Tutorials\Source\43_render_to_texture\Case43_render_to_texture.pas"/>
@@ -155,7 +156,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="195"/>
         <CursorPos X="20" Y="211"/>
-        <UsageCount Value="17"/>
+        <UsageCount Value="13"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\SDL2-Tutorials\Source\43_render_to_texture\Case43_render_to_texture.Texture.pas"/>
@@ -164,7 +165,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="26"/>
         <CursorPos X="93" Y="241"/>
-        <UsageCount Value="17"/>
+        <UsageCount Value="13"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-objpas\src\inc\system.uitypes.pp"/>
@@ -174,14 +175,14 @@
         <WindowIndex Value="0"/>
         <TopLine Value="533"/>
         <CursorPos X="6" Y="543"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="1"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_SDL\source\sdl2_loader.pas"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="0"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\opengl\src\gl.pp"/>
@@ -191,7 +192,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="2261"/>
         <CursorPos X="15" Y="2270"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="0"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_SDL\source\libsdl2_ttf.pas"/>
@@ -201,7 +202,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="142"/>
         <CursorPos X="4" Y="159"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="17"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\types.pp"/>
@@ -211,7 +212,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="126"/>
         <CursorPos X="3" Y="143"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="15"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\typshrdh.inc"/>
@@ -220,7 +221,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="105"/>
         <CursorPos X="23" Y="110"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="15"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\win64\windows.pp"/>
@@ -229,7 +230,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="76"/>
         <CursorPos X="3" Y="76"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="15"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\classes\classesh.inc"/>
@@ -238,7 +239,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="16"/>
         <CursorPos X="4" Y="33"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="15"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\win64\classes.pp"/>
@@ -248,7 +249,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="112"/>
         <CursorPos X="3" Y="112"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="15"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\typshrd.inc"/>
@@ -257,7 +258,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="333"/>
         <CursorPos X="3" Y="337"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="15"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\win\wininc\redef.inc"/>
@@ -266,7 +267,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="703"/>
         <CursorPos X="10" Y="720"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="0"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\classes\classes.inc"/>
@@ -275,7 +276,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1248"/>
         <CursorPos X="3" Y="1260"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="15"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\DeepStar-Lib\CodeTyphon\Package\Source\OpenGL\DeepStar.OpenGL.Utils.pas"/>
@@ -283,7 +284,7 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="88"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="4"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\sdl\src\sdl_mixer.pas"/>
@@ -291,147 +292,166 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="749"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="6"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\typhon\components\packages_pl\pl_SDL\source\libsdl2_mixer.pas"/>
         <FRMtype Value="0"/>
         <UnitName Value="libSDL2_mixer"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="112"/>
         <CursorPos X="57" Y="143"/>
-        <UsageCount Value="12"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="7"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\objpash.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="0"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="334"/>
+        <CursorPos X="26" Y="355"/>
+        <UsageCount Value="6"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\objpas.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1163"/>
+        <CursorPos X="10" Y="1171"/>
+        <UsageCount Value="6"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\x86_64\x86_64.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1409"/>
+        <CursorPos X="10" Y="1429"/>
+        <UsageCount Value="6"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="16" Column="49"/>
+        <Caret Line="84" TopLine="68"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="11" Column="38"/>
+        <Caret Line="75" TopLine="68"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="55" TopLine="43"/>
+        <Caret Line="77" TopLine="68"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="57" TopLine="45"/>
+        <Caret Line="79" TopLine="68"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="61" TopLine="55"/>
+        <Caret Line="80" TopLine="68"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="55" TopLine="47"/>
+        <Caret Line="63" TopLine="56"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="61" TopLine="49"/>
+        <Caret Line="50" Column="21" TopLine="20"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="62" TopLine="50"/>
+        <Caret Line="130" Column="3" TopLine="128"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
+        <Caret Line="33" Column="21" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
+        <Caret Line="15" Column="5" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
+        <Caret Line="23" Column="25" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
+        <Caret Line="36" Column="34" TopLine="7"/>
+      </Position>
+      <Position>
+        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
+        <Caret Line="72" Column="4" TopLine="47"/>
       </Position>
       <Position>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
-        <Caret Line="37" TopLine="31"/>
+        <Caret Line="37" Column="30" TopLine="19"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="55" TopLine="50"/>
+        <Caret Line="47" Column="20" TopLine="26"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="57" TopLine="50"/>
+        <Caret Line="124" Column="3" TopLine="122"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="61" TopLine="50"/>
+        <Caret Line="60" TopLine="51"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="62" TopLine="50"/>
+        <Caret Line="61" TopLine="51"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="54" TopLine="50"/>
+        <Caret Line="47" Column="20" TopLine="39"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="62" TopLine="50"/>
+        <Caret Line="124" Column="3" TopLine="122"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="81" TopLine="74"/>
+        <Caret Line="47" Column="17" TopLine="27"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="55" TopLine="48"/>
+        <Caret Line="124" Column="3" TopLine="107"/>
       </Position>
       <Position>
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="61" TopLine="49"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="62" TopLine="50"/>
+        <Caret Line="48" Column="20" TopLine="27"/>
       </Position>
       <Position>
         <Filename Value="Source\SDL2_Demos.Main.pas"/>
-        <Caret Line="36" TopLine="31"/>
+        <Caret Line="40" TopLine="31"/>
       </Position>
       <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="55" TopLine="50"/>
+        <Filename Value="Source\HelloWorld\SDL2_Demos.HelloWorld.pas"/>
+        <Caret Line="56" Column="14" TopLine="35"/>
       </Position>
       <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="61" TopLine="50"/>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="36" TopLine="20"/>
       </Position>
       <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="62" TopLine="50"/>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="37" TopLine="21"/>
       </Position>
       <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="54" TopLine="50"/>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="40" TopLine="24"/>
       </Position>
       <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="62" TopLine="50"/>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="43" TopLine="27"/>
       </Position>
       <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="55" TopLine="50"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="61" TopLine="50"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="62" TopLine="50"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="54" TopLine="50"/>
-      </Position>
-      <Position>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Caret Line="62" TopLine="50"/>
+        <Filename Value="Source\SDL2_Demos.Main.pas"/>
+        <Caret Line="26" Column="29" TopLine="12"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -448,15 +468,6 @@
     </HistoryLists>
   </ProjectSession>
   <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
-        <Line Value="56"/>
-      </Item>
-    </BreakPoints>
     <Watches>
       <Item ClassAutoCast="True">
         <Expression Value="i"/>
