@@ -9,23 +9,11 @@ interface
 uses
   Classes,
   SysUtils,
+  DeepStar.SDL2_Encapsulation.ClassBase,
   DeepStar.Utils,
   libSDL2_mixer;
 
 type
-  TMixerBase = class(TInterfacedObject)
-  protected class var
-    _IsAudioOpened: boolean;
-    _MixerRefCount: integer;
-
-  public
-    constructor Create; virtual;
-    destructor Destroy; override;
-
-    procedure LoadFromFile(fileName: string); virtual; abstract;
-    procedure Play; virtual; abstract;
-  end;
-
   TMusic = class(TMixerBase)
   private
     _Music: PMix_Music;
@@ -51,33 +39,6 @@ type
   end;
 
 implementation
-
-{ TMixerBase }
-
-constructor TMixerBase.Create;
-begin
-  if not _IsAudioOpened then
-    if Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0 then
-      raise Exception.Create('SDL_mixer could not initialize! SDL_mixer Error');
-
-
-  _IsAudioOpened := true;
-
-  _MixerRefCount += 1;
-end;
-
-destructor TMixerBase.Destroy;
-begin
-  _MixerRefCount -= 1;
-
-  if _IsAudioOpened and (_MixerRefCount <= 0) then
-  begin
-    Mix_CloseAudio;
-    _IsAudioOpened := false;
-  end;
-
-  inherited Destroy;
-end;
 
 { TMusic }
 

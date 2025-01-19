@@ -14,10 +14,11 @@ uses
   libSDL2_image,
   libSDL2_ttf,
   libSDL2_gfx,
-  DeepStar.Utils;
+  DeepStar.Utils,
+  DeepStar.SDL2_Encapsulation.ClassBase;
 
 type
-  TTexture = Class(TInterfacedObject)
+  TTexture = Class(TImageBase)
   public type
     TScale = record
     public
@@ -46,6 +47,7 @@ type
     procedure __Free;
 
   public
+    constructor Create; override;
     constructor Create(renderer: PSDL_Renderer);
     destructor Destroy; override;
 
@@ -76,6 +78,8 @@ type
     procedure Render(x, y: integer; clip: PSDL_Rect = nil; angle: double = 0;
       center: PSDL_Point = nil; flip: TSDL_RendererFlags = SDL_FLIP_NONE);
 
+    procedure SetRenderer(renderer: PSDL_Renderer);
+
     //(*═══════════════════════════════════════════════════════════════════════
     // 绘图函数
 
@@ -89,10 +93,6 @@ type
     procedure DrawCircle(x, y, rad: integer);
     procedure DrawCircleA(x, y, rad: integer);
     procedure DrawCircleAndFilled(x, y, rad: integer);
-
-    //TcircleRGBA
-
-
 
     //═══════════════════════════════════════════════════════════════════════*)
 
@@ -116,9 +116,17 @@ uses
 
 constructor TTexture.Create(renderer: PSDL_Renderer);
 begin
-  _Renderer := renderer;
+  Create;
+
   _Scale := TScale.Create;
   _Color := TSDL_Color(TAlphaColors.White);
+
+  Self.SetRenderer(renderer);
+end;
+
+constructor TTexture.Create;
+begin
+  inherited Create;
 end;
 
 procedure TTexture.Clear;
@@ -477,6 +485,11 @@ end;
 procedure TTexture.SetPosition(ap: TPoint);
 begin
   _Position := ap;
+end;
+
+procedure TTexture.SetRenderer(renderer: PSDL_Renderer);
+begin
+  _Renderer := renderer;
 end;
 
 procedure TTexture.SetScale(x, y: float);

@@ -23,11 +23,11 @@ procedure Run;
 
 implementation
 
-uses SDL2_Demos.HelloWorld;
+uses SDL2_Demos.Circle;
 
 procedure Test;
 begin
-  Exit;
+  exit;
 end;
 
 procedure Run;

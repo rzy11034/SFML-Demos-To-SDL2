@@ -16,7 +16,8 @@ uses
   libSDL2,
   libSDL2_image,
   libSDL2_ttf,
-  DeepStar.Utils;
+  DeepStar.Utils,
+  DeepStar.SDL2_Encapsulation.ClassBase;
 
 type
   TMessageBoxType = type int32;
@@ -27,7 +28,7 @@ const
   MESSAGEBOX_INFORMATION = libSDL2.SDL_MESSAGEBOX_INFORMATION;
 
 type
-  TWindow = class(TInterfacedObject)
+  TWindow = class(TWindowBase)
   private
     _Context: TSDL_GLContext;
 
@@ -51,14 +52,10 @@ type
     function __GetRenderer: PSDL_Renderer;
     function __GetWidth: int32;
 
-    procedure __SDL_Init;
-    procedure __IMG_Init;
-    procedure __TTF_Init;
-    procedure __SetHint;
     procedure __SetCaption(const Value: string);
 
   public
-    constructor Create;
+    constructor Create; override;
     destructor Destroy; override;
 
     function ShowMessageBox(flag: TMessageBoxType; title, message: string): int32;
@@ -109,10 +106,6 @@ begin
     _Window := nil;
   end;
 
-  TTF_Quit;
-  IMG_Quit;
-  SDL_Quit;
-
   inherited Destroy;
 end;
 
@@ -134,11 +127,6 @@ end;
 
 procedure TWindow.Init(caption: string; winPosX, winPosY, width, height: int32; flags: uint32);
 begin
-  __SDL_Init;
-  __SetHint;
-  __IMG_Init;
-  __TTF_Init;
-
   _Caption := caption;
 
   _Window := __CreateWindow(caption, winPosX, winPosY, width, height, flags);
@@ -253,59 +241,12 @@ begin
   Result := _Window;
 end;
 
-procedure TWindow.__IMG_Init;
-var
-  errStr: string;
-begin
-  if IMG_Init(IMG_INIT_PNG) < 0 then
-  begin
-    errStr := 'SDL_image could not initialize! SDL_image Error.';
-    raise Exception.Create(errStr.ToAnsiString);
-  end;
-end;
-
-procedure TWindow.__SetHint;
-var
-  errStr: string;
-begin
-  // Set texture filtering to linear
-  if not SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, '1') then
-  begin
-    errStr := 'Warning: Linear texture filtering not enabled!';
-    raise Exception.Create(errStr.ToAnsiString);
-  end;
-end;
-
 procedure TWindow.__SetCaption(const Value: string);
 begin
   if _Caption = Value then Exit;
 
   _Caption := Value;
   SDL_SetWindowTitle(_Window, Value.ToPAnsiChar);
-end;
-
-procedure TWindow.__TTF_Init;
-var
-  errStr: string;
-begin
-  if TTF_Init() = -1 then
-  begin
-    errStr := 'SDL_ttf could not initialize! SDL_ttf Error: %s';
-    errStr.Format([SDL_GetError()]);
-    raise Exception.Create(errStr.ToAnsiString);
-  end;
-end;
-
-procedure TWindow.__SDL_Init;
-var
-  errStr: string;
-begin
-  if SDL_Init(SDL_INIT_EVERYTHING) < 0 then
-  begin
-    errStr := 'SDL could not initialize! SDL_Error：%s';
-    errStr.Format([SDL_GetError()]);
-    raise Exception.Create(errStr.ToAnsiString);
-  end;
 end;
 
 function TWindow.__CreateRenderer: PSDL_Renderer;
