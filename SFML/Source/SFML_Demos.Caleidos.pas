@@ -1,13 +1,13 @@
 ﻿unit SFML_Demos.Caleidos;
 
 {$mode ObjFPC}{$H+}
+{$ModeSwitch unicodestrings}{$J-}
 
 interface
 
 uses
   Classes,
-  SysUtils,
-  GL;
+  SysUtils;
 
 procedure Main;
 
@@ -17,6 +17,7 @@ uses
   {$ifdef LINUX}
   Math,
   {$endif}
+  DeepStar.Utils,
   CSFMLConfig,
   CSFMLGraphics,
   CSFMLSystem,
@@ -110,9 +111,9 @@ begin
     '	gl_FragColor = vec4(hsv(noise(vec2(ai, di) * 0.01), 1.0, v), 1.0);'#10 +
     '}';
 
-  WriteLn(FragmentShader);
+  WriteLn(PAnsiChar(FragmentShader));
 
-  ShaderHandle := sfShader_createFromMemory(nil, nil, FragmentShader);
+  ShaderHandle := sfShader_createFromMemory(nil, nil, PAnsiChar(FragmentShader));
   States.Shader := ShaderHandle;
 
   RenderTargetHandle := sfRenderTexture_create(800, 600, sfFalse);
@@ -126,7 +127,7 @@ begin
   Mode.Height := 600;
   Mode.BitsPerPixel := 32;
   Title := 'SFML Shader - ' + lowerCase({$I %FPCTARGETCPU%}) + '-' + lowerCase({$I %FPCTARGETOS%});
-  WindowHandle := sfRenderWindow_create(Mode, PChar(Title), sfUint32(sfTitleBar) or sfUint32(sfClose), nil);
+  WindowHandle := sfRenderWindow_create(Mode, Title.ToPAnsiChar, sfUint32(sfTitleBar) or sfUint32(sfClose), nil);
 
   sfShader_setFloat2Parameter(ShaderHandle, 'resolution', Mode.Width, Mode.Height);
 

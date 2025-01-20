@@ -1,7 +1,6 @@
 ﻿unit SFML_Demos.Colorful;
 
 {$mode ObjFPC}{$H+}
-{$ModeSwitch unicodestrings}{$J-}
 
 interface
 
@@ -99,8 +98,7 @@ begin
     '    gl_FragColor = vec4(finalColor, 1.0 );'#10 +
     '}';
 
-  Title := FragmentShader;
-  WriteLn(Title);
+  WriteLn(FragmentShader);
 
   ShaderHandle := sfShader_createFromMemory(nil, nil, FragmentShader);
   States.Shader := ShaderHandle;

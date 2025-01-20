@@ -16,8 +16,7 @@ uses
   libSDL2,
   libSDL2_image,
   libSDL2_ttf,
-  DeepStar.Utils,
-  DeepStar.SDL2_Encapsulation.ClassBase;
+  DeepStar.Utils;
 
 type
   TMessageBoxType = type int32;
@@ -28,7 +27,20 @@ const
   MESSAGEBOX_INFORMATION = libSDL2.SDL_MESSAGEBOX_INFORMATION;
 
 type
-  TWindow = class(TWindowBase)
+  TCustomWindow = class abstract(TInterfacedObject)
+  protected class var
+    _WindowRefCount: integer;
+
+  private
+    procedure __SetHint;
+    procedure __SDL_Init;
+
+  public
+    constructor Create; virtual;
+    destructor Destroy; override;
+  end;
+
+  TWindow = class(TCustomWindow)
   private
     _Context: TSDL_GLContext;
 
@@ -78,6 +90,53 @@ type
   end;
 
 implementation
+
+{ TCustomWindow }
+
+constructor TCustomWindow.Create;
+begin
+  if _WindowRefCount = 0 then
+  begin
+    __SDL_Init;
+    __SetHint;
+  end;
+
+  _WindowRefCount += 1;
+end;
+
+destructor TCustomWindow.Destroy;
+begin
+  _WindowRefCount -= 0;
+
+  if _WindowRefCount <= 0 then
+    SDL_Quit;
+
+  inherited Destroy;
+end;
+
+procedure TCustomWindow.__SDL_Init;
+var
+  errStr: string;
+begin
+  if SDL_Init(SDL_INIT_EVERYTHING) < 0 then
+  begin
+    errStr := 'SDL could not initialize! SDL_Error：%s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
+
+procedure TCustomWindow.__SetHint;
+var
+  errStr: string;
+begin
+  // Set texture filtering to linear
+  if not SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, '1') then
+  begin
+    errStr := 'Warning: Linear texture filtering not enabled!';
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
 
   { TWindow }
 

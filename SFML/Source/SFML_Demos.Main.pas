@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  SFML_Demos.HelloWorld;
+  SFML_Demos.Caleidos;
 
 procedure Test;
 begin

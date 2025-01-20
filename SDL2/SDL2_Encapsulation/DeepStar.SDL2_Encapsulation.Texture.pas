@@ -14,11 +14,23 @@ uses
   libSDL2_image,
   libSDL2_ttf,
   libSDL2_gfx,
-  DeepStar.Utils,
-  DeepStar.SDL2_Encapsulation.ClassBase;
+  DeepStar.Utils;
 
 type
-  TTexture = Class(TImageBase)
+  TCustomImage = class abstract(TInterfacedObject)
+  protected class var
+    _ImageRefCount: integer;
+
+  private
+    procedure __IMG_Init;
+    procedure __TTF_Init;
+
+  public
+    constructor Create; virtual;
+    destructor Destroy; override;
+  end;
+
+  TTexture = Class(TCustomImage)
   public type
     TScale = record
     public
@@ -111,6 +123,60 @@ implementation
 
 uses
   DeepStar.SDL2_Encapsulation.Utils;
+
+{ TCustomImage }
+
+constructor TCustomImage.Create;
+begin
+  if _ImageRefCount = 0 then
+  begin
+    __IMG_Init;
+    __TTF_Init;
+  end;
+
+  _ImageRefCount += 1;
+end;
+
+destructor TCustomImage.Destroy;
+begin
+  _ImageRefCount -= 1;
+
+  if _ImageRefCount <= 0 then
+  begin
+    IMG_Quit;
+    TTF_Quit;
+  end;
+
+  inherited Destroy;
+end;
+
+procedure TCustomImage.__IMG_Init;
+var
+  errStr: string;
+  flagJpg, flagPng: integer;
+begin
+  flagPng := IMG_Init(IMG_INIT_PNG);
+  flagJpg := IMG_Init(IMG_INIT_JPG);
+
+  if (flagJpg <= 0) and (flagPng <= 0) then
+  begin
+    errStr := 'SDL_image could not initialize! SDL_image Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
+
+procedure TCustomImage.__TTF_Init;
+var
+  errStr: string;
+begin
+  if TTF_Init() = -1 then
+  begin
+    errStr := 'SDL_ttf could not initialize! SDL_ttf Error: %s';
+    errStr.Format([SDL_GetError()]);
+    raise Exception.Create(errStr.ToAnsiString);
+  end;
+end;
 
   { TTexture }
 

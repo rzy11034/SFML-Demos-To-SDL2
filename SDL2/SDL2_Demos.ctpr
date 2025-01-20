@@ -105,10 +105,6 @@
         <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.Mixer.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
-      <Unit>
-        <Filename Value="SDL2_Encapsulation\DeepStar.SDL2_Encapsulation.ClassBase.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -23,7 +23,7 @@ procedure Run;
 
 implementation
 
-uses SDL2_Demos.Circle;
+uses SDL2_Demos.HelloWorld;
 
 procedure Test;
 begin
